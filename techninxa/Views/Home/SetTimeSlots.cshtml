@@ -1,0 +1,582 @@
+﻿@model List<techninxa.Models.TimeSlot>
+
+@{
+    ViewData["Title"] = "Time Slot Settings";
+}
+
+<style>
+
+    .timeslot-page {
+        margin-top: 80px;
+        min-height: 100vh;
+        padding: 50px 25px;
+
+        background:
+            radial-gradient(
+                circle at top right,
+                rgba(56, 189, 248, 0.15),
+                transparent 35%
+            ),
+            linear-gradient(
+                135deg,
+                #f0f9ff,
+                #ffffff
+            );
+    }
+
+    .timeslot-container {
+        max-width: 850px;
+        margin: 0 auto;
+    }
+
+    /* HEADER */
+
+    .timeslot-heading {
+        margin-bottom: 28px;
+    }
+
+    .timeslot-heading h1 {
+        margin: 0;
+
+        font-size: 34px;
+        font-weight: 800;
+
+        color: #0f172a;
+    }
+
+    .timeslot-heading p {
+        margin-top: 8px;
+
+        color: #64748b;
+
+        font-size: 15px;
+    }
+
+    /* ALERT */
+
+    .timeslot-success,
+    .timeslot-error {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        padding: 14px 18px;
+        margin-bottom: 20px;
+
+        border-radius: 14px;
+
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .timeslot-success {
+        background: #ecfdf5;
+        border: 1px solid #a7f3d0;
+        color: #047857;
+    }
+
+    .timeslot-error {
+        background: #fef2f2;
+        border: 1px solid #fecaca;
+        color: #b91c1c;
+    }
+
+    /* CARD */
+
+    .timeslot-card {
+        padding: 28px;
+
+        background: rgba(255,255,255,0.96);
+
+        border: 1px solid #dbeafe;
+        border-radius: 24px;
+
+        box-shadow:
+            0 20px 50px rgba(14,165,233,0.10);
+    }
+
+    /* ADD FORM */
+
+    .timeslot-form-title {
+        margin-bottom: 18px;
+
+        font-size: 18px;
+        font-weight: 750;
+
+        color: #0f172a;
+    }
+
+    .timeslot-form {
+        display: grid;
+
+        grid-template-columns: 1fr 1fr auto;
+
+        gap: 14px;
+
+        align-items: end;
+    }
+
+    .time-field {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+    }
+
+    .time-field label {
+        font-size: 13px;
+        font-weight: 700;
+        color: #475569;
+    }
+
+    .time-field input {
+        width: 100%;
+
+        padding: 13px 14px;
+
+        border: 1px solid #cbd5e1;
+        border-radius: 12px;
+
+        background: #f8fdff;
+
+        color: #0f172a;
+
+        font-size: 14px;
+
+        outline: none;
+
+        transition: 0.2s;
+    }
+
+    .time-field input:focus {
+        border-color: #38bdf8;
+
+        box-shadow:
+            0 0 0 3px rgba(56,189,248,0.12);
+    }
+
+    .add-slot-btn {
+        height: 46px;
+
+        padding: 0 20px;
+
+        border: none;
+        border-radius: 12px;
+
+        background: linear-gradient(
+            135deg,
+            #38bdf8,
+            #0284c7
+        );
+
+        color: white;
+
+        font-size: 14px;
+        font-weight: 700;
+
+        cursor: pointer;
+
+        box-shadow:
+            0 8px 20px rgba(14,165,233,0.20);
+
+        transition: 0.25s;
+    }
+
+    .add-slot-btn:hover {
+        transform: translateY(-2px);
+
+        box-shadow:
+            0 12px 25px rgba(14,165,233,0.28);
+    }
+
+    /* DIVIDER */
+
+    .timeslot-divider {
+        height: 1px;
+
+        margin: 28px 0;
+
+        background: #e2e8f0;
+    }
+
+    /* LIST */
+
+    .timeslot-list-title {
+        margin-bottom: 15px;
+
+        font-size: 18px;
+        font-weight: 750;
+
+        color: #0f172a;
+    }
+
+    .timeslot-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 16px 18px;
+
+        margin-bottom: 12px;
+
+        background: #f8fdff;
+
+        border: 1px solid #e0f2fe;
+        border-radius: 16px;
+
+        transition: 0.25s;
+    }
+
+    .timeslot-item:hover {
+        background: #f0f9ff;
+
+        border-color: #7dd3fc;
+
+        transform: translateY(-1px);
+    }
+
+    .timeslot-left {
+        display: flex;
+        align-items: center;
+
+        gap: 14px;
+    }
+
+    .time-icon {
+        width: 44px;
+        height: 44px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 13px;
+
+        background: #e0f2fe;
+
+        color: #0284c7;
+
+        font-size: 18px;
+    }
+
+    .time-range {
+        font-size: 16px;
+        font-weight: 750;
+
+        color: #0f172a;
+    }
+
+    .time-status {
+        margin-top: 3px;
+
+        font-size: 12px;
+        color: #64748b;
+    }
+
+    .timeslot-actions {
+        display: flex;
+        align-items: center;
+
+        gap: 8px;
+    }
+
+    .slot-action {
+        width: 38px;
+        height: 38px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border: none;
+        border-radius: 10px;
+
+        cursor: pointer;
+
+        transition: 0.2s;
+    }
+
+    .toggle-btn {
+        background: #e0f2fe;
+        color: #0284c7;
+    }
+
+    .toggle-btn:hover {
+        background: #bae6fd;
+    }
+
+    .delete-btn {
+        background: #fef2f2;
+        color: #dc2626;
+    }
+
+    .delete-btn:hover {
+        background: #fee2e2;
+    }
+
+    /* EMPTY */
+
+    .empty-slots {
+        padding: 35px 20px;
+
+        text-align: center;
+
+        color: #64748b;
+
+        background: #f8fafc;
+
+        border: 1px dashed #cbd5e1;
+
+        border-radius: 16px;
+    }
+
+    /* MOBILE */
+
+    @@media (max-width: 700px) {
+
+        .timeslot-page {
+            padding: 30px 15px;
+        }
+
+        .timeslot-heading h1 {
+            font-size: 28px;
+        }
+
+        .timeslot-card {
+            padding: 18px;
+        }
+
+        .timeslot-form {
+            grid-template-columns: 1fr;
+        }
+
+        .add-slot-btn {
+            width: 100%;
+        }
+
+        .timeslot-item {
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .timeslot-actions {
+            flex-shrink: 0;
+        }
+
+    }
+
+</style>
+
+
+<div class="timeslot-page">
+
+    <div class="timeslot-container">
+
+        <!-- HEADER -->
+
+        <div class="timeslot-heading">
+
+            <h1>Time Slot Settings</h1>
+
+            <p>
+                Create and manage the time slots used throughout the system.
+            </p>
+            <p>
+                <a href="/dashboard" style="background:blue;color:white;padding: 10px">Back</a>
+            </p>
+        </div>
+
+
+        <!-- SUCCESS -->
+
+        @if (TempData["TimeSlotSuccess"] != null)
+        {
+            <div class="timeslot-success">
+
+                <span>✓</span>
+
+                <span>
+                    @TempData["TimeSlotSuccess"]
+                </span>
+
+            </div>
+        }
+
+
+        <!-- ERROR -->
+
+        @if (TempData["TimeSlotError"] != null)
+        {
+            <div class="timeslot-error">
+
+                <span>!</span>
+
+                <span>
+                    @TempData["TimeSlotError"]
+                </span>
+
+            </div>
+        }
+
+
+        <div class="timeslot-card">
+
+            <!-- ADD -->
+
+            <div class="timeslot-form-title">
+                Add New Time Slot
+            </div>
+
+
+            <form asp-action="Add"
+                  method="post"
+                  class="timeslot-form">
+
+                @Html.AntiForgeryToken()
+
+
+                <div class="time-field">
+
+                    <label for="startTime">
+                        Start Time
+                    </label>
+
+                    <input type="time"
+                           id="startTime"
+                           name="startTime"
+                           required />
+
+                </div>
+
+
+                <div class="time-field">
+
+                    <label for="endTime">
+                        End Time
+                    </label>
+
+                    <input type="time"
+                           id="endTime"
+                           name="endTime"
+                           required />
+
+                </div>
+
+
+                <button type="submit"
+                        class="add-slot-btn">
+
+                    + Add Slot
+
+                </button>
+
+            </form>
+
+
+            <div class="timeslot-divider"></div>
+
+
+            <!-- EXISTING SLOTS -->
+
+            <div class="timeslot-list-title">
+                Available Time Slots
+            </div>
+
+
+            @if (Model != null && Model.Any())
+            {
+                foreach (var slot in Model)
+                {
+                    <div class="timeslot-item">
+
+                        <div class="timeslot-left">
+
+                            <div class="time-icon">
+                                ◷
+                            </div>
+
+                            <div>
+
+                               <div class="time-range">
+    @DateTime.Today.Add(slot.StartTime).ToString("h:mm tt")
+    →
+    @DateTime.Today.Add(slot.EndTime).ToString("h:mm tt")
+</div>
+
+                                <div class="time-status">
+
+                                    @(slot.IsActive
+                                        ? "Active"
+                                        : "Inactive")
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="timeslot-actions">
+
+                            <!-- TOGGLE -->
+
+                            <form asp-action="Toggle"
+                                  method="post">
+
+                                @Html.AntiForgeryToken()
+
+                                <input type="hidden"
+                                       name="id"
+                                       value="@slot.Id" />
+
+                                <button type="submit"
+                                        class="slot-action toggle-btn"
+                                        title="Toggle status">
+
+                                    @(slot.IsActive ? "✓" : "○")
+
+                                </button>
+
+                            </form>
+
+
+                            <!-- DELETE -->
+
+                            <form asp-action="Delete"
+                                  method="post"
+                                  onsubmit="return confirm('Delete this time slot?');">
+
+                                @Html.AntiForgeryToken()
+
+                                <input type="hidden"
+                                       name="id"
+                                       value="@slot.Id" />
+
+                                <button type="submit"
+                                        class="slot-action delete-btn"
+                                        title="Delete">
+
+                                    ×
+
+                                </button>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+                }
+            }
+            else
+            {
+                <div class="empty-slots">
+
+                    No time slots have been created yet.
+
+                </div>
+            }
+
+        </div>
+
+    </div>
+
+</div>

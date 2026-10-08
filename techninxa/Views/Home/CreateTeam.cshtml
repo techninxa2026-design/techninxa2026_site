@@ -1,0 +1,1249 @@
+﻿@model techninxa.Models.TeamMember
+
+@{
+ViewData["Title"] = "Add Team Member";
+ViewData["ActiveNav"] = "Team";
+}
+
+<div class="create-team-page">
+
+`
+<!-- PAGE HEADER -->
+<div class="create-team-header">
+    <div class="header-content">
+        <a href="/Team" class="back-link">
+            ← Back to Team
+        </a>
+
+        <span class="admin-kicker">TEAM MANAGEMENT</span>
+
+        <h1>Add <em>Team Member.</em></h1>
+
+        <p>
+            Add a new member to your Techninxa team.
+            Their information will appear on the homepage when active.
+        </p>
+    </div>
+</div>
+
+
+<!-- MAIN CONTENT -->
+<div class="create-team-layout">
+
+    <!-- FORM CARD -->
+    <div class="create-team-card">
+
+        <div class="card-top">
+            <div>
+                <span class="card-kicker">NEW MEMBER</span>
+                <h2>Team Information</h2>
+            </div>
+
+            <div class="card-icon">
+                +
+            </div>
+        </div>
+
+
+        <form method="post"
+              action="/Team/Create"
+              enctype="multipart/form-data"
+              class="team-form">
+
+            @Html.AntiForgeryToken()
+
+            <!-- VALIDATION -->
+            <div asp-validation-summary="ModelOnly"
+                 class="validation-summary">
+            </div>
+
+
+            <!-- NAME -->
+            <div class="form-group">
+                <label asp-for="Name">
+                    Full Name
+                    <span>*</span>
+                </label>
+
+                <input asp-for="Name"
+                       class="form-control"
+                       placeholder="e.g. Ashik Rahman"
+                       autocomplete="off" />
+
+                <span asp-validation-for="Name"
+                      class="field-validation">
+                </span>
+            </div>
+
+
+            <!-- DEPARTMENT + ROLE -->
+            <div class="form-row">
+
+                <div class="form-group">
+                    <label asp-for="Department">
+                        Department
+                        <span>*</span>
+                    </label>
+
+                    <input asp-for="Department"
+                           class="form-control"
+                           placeholder="e.g. Management" />
+
+                    <span asp-validation-for="Department"
+                          class="field-validation">
+                    </span>
+                </div>
+
+
+                <div class="form-group">
+                    <label asp-for="Role">
+                        Role / Position
+                        <span>*</span>
+                    </label>
+
+                    <input asp-for="Role"
+                           class="form-control"
+                           placeholder="e.g. CEO & Founder" />
+
+                    <span asp-validation-for="Role"
+                          class="field-validation">
+                    </span>
+                </div>
+
+            </div>
+
+
+            <!-- ALT TEXT -->
+            <div class="form-group">
+                <label asp-for="AltText">
+                    Image Alt Text
+                    <span class="optional">Optional</span>
+                </label>
+
+                <input asp-for="AltText"
+                       class="form-control"
+                       placeholder="e.g. Ashik Rahman - CEO of Techninxa" />
+
+                <div class="field-help">
+                    Used for accessibility and search engines.
+                </div>
+
+                <span asp-validation-for="AltText"
+                      class="field-validation">
+                </span>
+            </div>
+
+
+            <!-- IMAGE -->
+            <div class="form-group">
+
+                <label for="ImageFile">
+                    Profile Image
+                    <span class="optional">Optional</span>
+                </label>
+
+                <div class="image-upload-area" id="imageUploadArea">
+
+                    <input type="file"
+                           id="ImageFile"
+                           name="ImageFile"
+                           accept=".jpg,.jpeg,.png,.webp"
+                           class="image-file-input" />
+
+                    <div class="upload-content" id="uploadContent">
+
+                        <div class="upload-icon">
+                            ↑
+                        </div>
+
+                        <strong>Upload profile image</strong>
+
+                        <span>
+                            Click to choose an image
+                        </span>
+
+                        <small>
+                            JPG, PNG or WEBP · Maximum 5 MB
+                        </small>
+
+                    </div>
+
+                    <div class="image-preview" id="imagePreview">
+                        <img id="previewImage" src="" alt="Preview">
+
+                        <div class="preview-details">
+                            <strong id="fileName">
+                                Image selected
+                            </strong>
+
+                            <span id="fileSize"></span>
+
+                            <button type="button"
+                                    id="removeImage"
+                                    class="remove-image">
+                                Remove
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="field-help">
+                    Recommended: use a clear professional square photo.
+                </div>
+
+                <span class="field-validation" id="imageError"></span>
+
+            </div>
+
+
+            <!-- ORDER + STATUS -->
+            <div class="form-row">
+
+                <div class="form-group">
+                    <label asp-for="DisplayOrder">
+                        Display Order
+                    </label>
+
+                    <input asp-for="DisplayOrder"
+                           type="number"
+                           min="0"
+                           class="form-control"
+                           value="0" />
+
+                    <div class="field-help">
+                        Lower numbers appear first.
+                    </div>
+
+                    <span asp-validation-for="DisplayOrder"
+                          class="field-validation">
+                    </span>
+                </div>
+
+
+                <div class="form-group status-group">
+
+                    <label>
+                        Visibility
+                    </label>
+
+                    <label class="switch-wrapper">
+
+                        <input asp-for="IsActive"
+                               type="checkbox"
+                               checked />
+
+                        <span class="switch"></span>
+
+                        <span class="switch-text">
+                            <strong>Active</strong>
+                            <small>
+                                Show this member on the homepage
+                            </small>
+                        </span>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <!-- BUTTONS -->
+            <div class="form-actions">
+
+                <a href="/Team"
+                   class="cancel-btn">
+                    Cancel
+                </a>
+
+                <button type="submit"
+                        class="save-btn">
+                    <span>+</span>
+                    Add Team Member
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+
+    <!-- SIDE PREVIEW / INFORMATION -->
+    <aside class="team-preview-card">
+
+        <span class="card-kicker">HOMEPAGE PREVIEW</span>
+
+        <h2>How it will look.</h2>
+
+        <div class="preview-team-card">
+
+            <div class="preview-photo" id="sidePreview">
+
+                <div class="preview-placeholder">
+                    <span>+</span>
+                    <small>Your photo</small>
+                </div>
+
+                <div class="preview-number">
+                    01
+                </div>
+
+            </div>
+
+            <div class="preview-info">
+
+                <span id="previewDepartment">
+                    DEPARTMENT
+                </span>
+
+                <h3 id="previewName">
+                    Your Name
+                </h3>
+
+                <div id="previewRole">
+                    Your Role
+                </div>
+
+                <span class="preview-arrow">
+                    ↗
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="preview-note">
+
+            <div class="note-icon">
+                ✓
+            </div>
+
+            <div>
+                <strong>Ready to publish</strong>
+
+                <p>
+                    Active team members are automatically
+                    displayed on the Techninxa homepage.
+                </p>
+            </div>
+
+        </div>
+
+    </aside>
+
+</div>
+```
+
+</div>
+
+<style>
+
+    * {
+        box-sizing: border-box;
+    }
+
+    .create-team-page {
+        width: 100%;
+        max-width: 1450px;
+        margin: 0 auto;
+        padding: 50px 40px 80px;
+    }
+
+
+    /* =========================
+       HEADER
+       ========================= */
+
+    .create-team-header {
+        margin-bottom: 42px;
+    }
+
+    .header-content {
+        max-width: 850px;
+    }
+
+    .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: #777;
+        text-decoration: none;
+        font-size: 14px;
+        margin-bottom: 28px;
+        transition: .25s ease;
+    }
+
+    .back-link:hover {
+        color: #111;
+        transform: translateX(-3px);
+    }
+
+    .admin-kicker,
+    .card-kicker {
+        display: block;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 2.5px;
+        color: #888;
+        margin-bottom: 12px;
+    }
+
+    .create-team-header h1 {
+        margin: 0;
+        font-size: clamp(42px, 5vw, 72px);
+        line-height: .95;
+        letter-spacing: -3px;
+        font-weight: 500;
+        color: #111;
+    }
+
+    .create-team-header h1 em {
+        font-style: normal;
+        font-weight: 400;
+        color: #888;
+    }
+
+    .create-team-header p {
+        margin: 20px 0 0;
+        max-width: 680px;
+        color: #777;
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+
+    /* =========================
+       LAYOUT
+       ========================= */
+
+    .create-team-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1.7fr) minmax(320px, .8fr);
+        gap: 28px;
+        align-items: start;
+    }
+
+
+    /* =========================
+       FORM CARD
+       ========================= */
+
+    .create-team-card {
+        background: #fff;
+        border: 1px solid #e8e8e8;
+        border-radius: 18px;
+        padding: 36px;
+        box-shadow: 0 12px 40px rgba(0,0,0,.04);
+    }
+
+    .card-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding-bottom: 28px;
+        margin-bottom: 30px;
+        border-bottom: 1px solid #ededed;
+    }
+
+    .card-top h2,
+    .team-preview-card h2 {
+        margin: 0;
+        font-size: 27px;
+        font-weight: 500;
+        letter-spacing: -1px;
+        color: #111;
+    }
+
+    .card-icon {
+        width: 42px;
+        height: 42px;
+        border: 1px solid #ddd;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        color: #555;
+    }
+
+
+    /* =========================
+       FORM
+       ========================= */
+
+    .team-form {
+        width: 100%;
+    }
+
+    .form-group {
+        margin-bottom: 25px;
+    }
+
+    .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .form-group label {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        margin-bottom: 9px;
+        color: #222;
+        font-size: 13px;
+        font-weight: 650;
+    }
+
+    .form-group label > span:not(.optional) {
+        color: #999;
+    }
+
+    .form-group label .optional {
+        margin-left: 5px;
+        font-size: 10px;
+        font-weight: 500;
+        color: #aaa;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .form-control {
+        width: 100%;
+        height: 52px;
+        padding: 0 16px;
+        border: 1px solid #ddd;
+        border-radius: 9px;
+        background: #fafafa;
+        color: #111;
+        font-size: 14px;
+        outline: none;
+        transition: .25s ease;
+        font-family: inherit;
+    }
+
+    textarea.form-control {
+        height: auto;
+        padding: 14px 16px;
+    }
+
+    .form-control:hover {
+        border-color: #c9c9c9;
+    }
+
+    .form-control:focus {
+        border-color: #222;
+        background: #fff;
+        box-shadow: 0 0 0 3px rgba(0,0,0,.04);
+    }
+
+    .form-control::placeholder {
+        color: #aaa;
+    }
+
+    .field-help {
+        margin-top: 7px;
+        font-size: 11px;
+        line-height: 1.5;
+        color: #999;
+    }
+
+    .field-validation,
+    .validation-summary {
+        color: #c0392b;
+        font-size: 12px;
+    }
+
+    .validation-summary {
+        margin-bottom: 20px;
+    }
+
+    .validation-summary ul {
+        margin: 0;
+        padding-left: 18px;
+    }
+
+
+    /* =========================
+       IMAGE UPLOAD
+       ========================= */
+
+    .image-upload-area {
+        position: relative;
+        min-height: 190px;
+        border: 1px dashed #ccc;
+        border-radius: 12px;
+        background: #fafafa;
+        overflow: hidden;
+        cursor: pointer;
+        transition: .25s ease;
+    }
+
+    .image-upload-area:hover,
+    .image-upload-area.drag-over {
+        border-color: #222;
+        background: #f7f7f7;
+    }
+
+    .image-file-input {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        cursor: pointer;
+        z-index: 5;
+    }
+
+    .upload-content {
+        min-height: 190px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        pointer-events: none;
+        padding: 25px;
+    }
+
+    .upload-icon {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 13px;
+        border: 1px solid #ddd;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        color: #555;
+    }
+
+    .upload-content strong {
+        font-size: 14px;
+        font-weight: 600;
+        color: #222;
+    }
+
+    .upload-content span {
+        margin-top: 5px;
+        color: #888;
+        font-size: 12px;
+    }
+
+    .upload-content small {
+        margin-top: 10px;
+        color: #aaa;
+        font-size: 10px;
+        letter-spacing: .5px;
+    }
+
+    .image-preview {
+        display: none;
+        min-height: 190px;
+        align-items: center;
+        gap: 22px;
+        padding: 20px;
+    }
+
+    .image-preview.show {
+        display: flex;
+    }
+
+    .image-preview img {
+        width: 145px;
+        height: 145px;
+        object-fit: cover;
+        border-radius: 12px;
+        border: 1px solid #ddd;
+    }
+
+    .preview-details {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+    }
+
+    .preview-details strong {
+        max-width: 300px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 13px;
+        color: #222;
+    }
+
+    .preview-details span {
+        font-size: 11px;
+        color: #999;
+    }
+
+    .remove-image {
+        align-self: flex-start;
+        margin-top: 8px;
+        padding: 7px 12px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        background: #fff;
+        color: #777;
+        cursor: pointer;
+        font-size: 11px;
+    }
+
+    .remove-image:hover {
+        border-color: #222;
+        color: #111;
+    }
+
+
+    /* =========================
+       STATUS SWITCH
+       ========================= */
+
+    .status-group {
+        min-width: 0;
+    }
+
+    .switch-wrapper {
+        min-height: 52px;
+        display: flex !important;
+        align-items: center;
+        gap: 13px !important;
+        margin: 0 !important;
+        cursor: pointer;
+    }
+
+    .switch-wrapper input {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .switch {
+        position: relative;
+        flex: 0 0 auto;
+        width: 46px;
+        height: 25px;
+        border-radius: 30px;
+        background: #ccc;
+        transition: .25s ease;
+    }
+
+    .switch::after {
+        content: "";
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        width: 17px;
+        height: 17px;
+        border-radius: 50%;
+        background: #fff;
+        transition: .25s ease;
+        box-shadow: 0 1px 3px rgba(0,0,0,.2);
+    }
+
+    .switch-wrapper input:checked + .switch {
+        background: #222;
+    }
+
+    .switch-wrapper input:checked + .switch::after {
+        transform: translateX(21px);
+    }
+
+    .switch-text {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .switch-text strong {
+        font-size: 13px;
+        font-weight: 600;
+        color: #222;
+    }
+
+    .switch-text small {
+        font-size: 11px;
+        font-weight: 400;
+        color: #999;
+    }
+
+
+    /* =========================
+       FORM BUTTONS
+       ========================= */
+
+    .form-actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 12px;
+        padding-top: 10px;
+        margin-top: 10px;
+        border-top: 1px solid #ededed;
+    }
+
+    .cancel-btn,
+    .save-btn {
+        height: 48px;
+        padding: 0 21px;
+        border-radius: 8px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: .25s ease;
+        font-family: inherit;
+    }
+
+    .cancel-btn {
+        border: 1px solid #ddd;
+        color: #666;
+        background: #fff;
+    }
+
+    .cancel-btn:hover {
+        border-color: #222;
+        color: #111;
+    }
+
+    .save-btn {
+        border: 1px solid #111;
+        background: #111;
+        color: #fff;
+    }
+
+    .save-btn:hover {
+        background: #333;
+        transform: translateY(-1px);
+    }
+
+    .save-btn span {
+        font-size: 18px;
+        font-weight: 300;
+    }
+
+
+    /* =========================
+       SIDE PREVIEW
+       ========================= */
+
+    .team-preview-card {
+        position: sticky;
+        top: 25px;
+        background: #f7f7f7;
+        border: 1px solid #e6e6e6;
+        border-radius: 18px;
+        padding: 30px;
+    }
+
+    .team-preview-card h2 {
+        margin-bottom: 25px;
+    }
+
+    .preview-team-card {
+        background: #fff;
+        border-radius: 13px;
+        overflow: hidden;
+        border: 1px solid #e5e5e5;
+    }
+
+    .preview-photo {
+        position: relative;
+        height: 280px;
+        background: #e9e9e9;
+        overflow: hidden;
+    }
+
+    .preview-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .preview-placeholder {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #aaa;
+    }
+
+    .preview-placeholder span {
+        font-size: 42px;
+        font-weight: 200;
+        line-height: 1;
+    }
+
+    .preview-placeholder small {
+        margin-top: 8px;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+    }
+
+    .preview-number {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: rgba(255,255,255,.9);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 11px;
+        color: #555;
+    }
+
+    .preview-info {
+        position: relative;
+        padding: 22px;
+    }
+
+    .preview-info > span:first-child {
+        display: block;
+        font-size: 9px;
+        letter-spacing: 1.8px;
+        color: #999;
+        text-transform: uppercase;
+        margin-bottom: 7px;
+    }
+
+    .preview-info h3 {
+        margin: 0;
+        font-size: 22px;
+        line-height: 1.1;
+        font-weight: 500;
+        color: #111;
+    }
+
+    .preview-info > div {
+        margin-top: 7px;
+        color: #777;
+        font-size: 12px;
+    }
+
+    .preview-arrow {
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+        font-size: 20px !important;
+        color: #999 !important;
+    }
+
+
+    /* =========================
+       PREVIEW NOTE
+       ========================= */
+
+    .preview-note {
+        display: flex;
+        gap: 13px;
+        margin-top: 22px;
+        padding: 18px;
+        border: 1px solid #e4e4e4;
+        border-radius: 10px;
+        background: #fff;
+    }
+
+    .note-icon {
+        flex: 0 0 auto;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: #eee;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 13px;
+        color: #555;
+    }
+
+    .preview-note strong {
+        display: block;
+        font-size: 12px;
+        color: #222;
+        margin-bottom: 4px;
+    }
+
+    .preview-note p {
+        margin: 0;
+        color: #888;
+        font-size: 11px;
+        line-height: 1.6;
+    }
+
+
+    /* =========================
+       RESPONSIVE
+       ========================= */
+
+    @@media (max-width: 1050px) {
+
+        .create-team-layout {
+            grid-template-columns: 1fr;
+        }
+
+        .team-preview-card {
+            position: static;
+        }
+
+    }
+
+
+    @@media (max-width: 700px) {
+
+        .create-team-page {
+            padding: 30px 18px 60px;
+        }
+
+        .create-team-header h1 {
+            font-size: 45px;
+            letter-spacing: -2px;
+        }
+
+        .create-team-card {
+            padding: 23px;
+            border-radius: 14px;
+        }
+
+        .form-row {
+            grid-template-columns: 1fr;
+            gap: 0;
+        }
+
+        .image-preview {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .image-preview img {
+            width: 120px;
+            height: 120px;
+        }
+
+        .form-actions {
+            flex-direction: column-reverse;
+        }
+
+        .cancel-btn,
+        .save-btn {
+            width: 100%;
+        }
+
+        .team-preview-card {
+            padding: 22px;
+        }
+
+        .preview-photo {
+            height: 320px;
+        }
+
+    }
+
+</style>
+
+@section Scripts {
+
+```
+<partial name="_ValidationScriptsPartial" />
+
+<script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+        const fileInput = document.getElementById("ImageFile");
+        const uploadArea = document.getElementById("imageUploadArea");
+        const uploadContent = document.getElementById("uploadContent");
+        const imagePreview = document.getElementById("imagePreview");
+        const previewImage = document.getElementById("previewImage");
+        const fileName = document.getElementById("fileName");
+        const fileSize = document.getElementById("fileSize");
+        const removeImage = document.getElementById("removeImage");
+        const imageError = document.getElementById("imageError");
+
+        const nameInput = document.getElementById("Name");
+        const departmentInput = document.getElementById("Department");
+        const roleInput = document.getElementById("Role");
+
+        const previewName = document.getElementById("previewName");
+        const previewDepartment = document.getElementById("previewDepartment");
+        const previewRole = document.getElementById("previewRole");
+        const sidePreview = document.getElementById("sidePreview");
+
+
+        /* =========================
+           IMAGE UPLOAD
+           ========================= */
+
+        if (fileInput) {
+
+            fileInput.addEventListener("change", function () {
+
+                imageError.textContent = "";
+
+                if (!fileInput.files || fileInput.files.length === 0) {
+                    return;
+                }
+
+                const file = fileInput.files[0];
+
+                const allowedTypes = [
+                    "image/jpeg",
+                    "image/png",
+                    "image/webp"
+                ];
+
+                if (!allowedTypes.includes(file.type)) {
+                    imageError.textContent =
+                        "Only JPG, PNG and WEBP images are allowed.";
+
+                    fileInput.value = "";
+                    return;
+                }
+
+                if (file.size > 5 * 1024 * 1024) {
+                    imageError.textContent =
+                        "Image cannot be larger than 5 MB.";
+
+                    fileInput.value = "";
+                    return;
+                }
+
+                const reader = new FileReader();
+
+                reader.onload = function (event) {
+
+                    previewImage.src = event.target.result;
+
+                    sidePreview.innerHTML =
+                        '<img src="' +
+                        event.target.result +
+                        '" alt="Team member preview">' +
+                        '<div class="preview-number">01</div>';
+
+                    uploadContent.style.display = "none";
+                    imagePreview.classList.add("show");
+
+                    fileName.textContent = file.name;
+
+                    const sizeMb =
+                        (file.size / (1024 * 1024)).toFixed(2);
+
+                    fileSize.textContent =
+                        sizeMb + " MB";
+
+                };
+
+                reader.readAsDataURL(file);
+            });
+
+
+            removeImage.addEventListener("click", function (event) {
+
+                event.preventDefault();
+                event.stopPropagation();
+
+                fileInput.value = "";
+
+                imagePreview.classList.remove("show");
+                uploadContent.style.display = "flex";
+
+                sidePreview.innerHTML =
+                    '<div class="preview-placeholder">' +
+                    '<span>+</span>' +
+                    '<small>Your photo</small>' +
+                    '</div>' +
+                    '<div class="preview-number">01</div>';
+
+                imageError.textContent = "";
+            });
+
+
+            uploadArea.addEventListener("dragover", function (event) {
+                event.preventDefault();
+                uploadArea.classList.add("drag-over");
+            });
+
+
+            uploadArea.addEventListener("dragleave", function () {
+                uploadArea.classList.remove("drag-over");
+            });
+
+
+            uploadArea.addEventListener("drop", function (event) {
+
+                event.preventDefault();
+
+                uploadArea.classList.remove("drag-over");
+
+                if (event.dataTransfer.files.length > 0) {
+
+                    fileInput.files =
+                        event.dataTransfer.files;
+
+                    fileInput.dispatchEvent(
+                        new Event("change")
+                    );
+                }
+            });
+
+        }
+
+
+        /* =========================
+           LIVE TEXT PREVIEW
+           ========================= */
+
+        function updatePreview(input, target, fallback) {
+
+            if (!input || !target) {
+                return;
+            }
+
+            input.addEventListener("input", function () {
+
+                const value = input.value.trim();
+
+                target.textContent =
+                    value || fallback;
+
+            });
+
+        }
+
+        updatePreview(
+            nameInput,
+            previewName,
+            "Your Name"
+        );
+
+        updatePreview(
+            departmentInput,
+            previewDepartment,
+            "DEPARTMENT"
+        );
+
+        updatePreview(
+            roleInput,
+            previewRole,
+            "Your Role"
+        );
+
+    });
+
+</script>
+
+
+}

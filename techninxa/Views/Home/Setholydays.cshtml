@@ -1,0 +1,495 @@
+﻿@model List<techninxa.Models.HolidayDayViewModel>
+
+@{
+    ViewData["Title"] = "Set Holidays";
+}
+
+<style>
+    .holiday-page {
+        margin-top: 80px;
+        min-height: 100vh;
+        padding: 50px 25px;
+        background:
+            radial-gradient(
+                circle at top right,
+                rgba(56, 189, 248, 0.14),
+                transparent 35%
+            ),
+            linear-gradient(
+                135deg,
+                #f0f9ff 0%,
+                #ffffff 55%,
+                #f8fbff 100%
+            );
+    }
+
+    .holiday-container {
+        width: 100%;
+        max-width: 850px;
+        margin: 0 auto;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    .holiday-heading {
+        margin-bottom: 28px;
+    }
+
+    .holiday-heading h1 {
+        margin: 0;
+        font-size: 34px;
+        line-height: 1.2;
+        font-weight: 800;
+        letter-spacing: -0.7px;
+        color: #0f172a;
+    }
+
+    .holiday-heading p {
+        margin: 9px 0 0;
+        color: #64748b;
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    /* =========================
+       SUCCESS MESSAGE
+    ========================= */
+
+    .success-message {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+
+        padding: 14px 17px;
+        margin-bottom: 20px;
+
+        border-radius: 14px;
+
+        background: #ecfdf5;
+        border: 1px solid #a7f3d0;
+
+        color: #047857;
+
+        font-size: 14px;
+        font-weight: 600;
+
+        box-shadow: 0 5px 15px rgba(16, 185, 129, 0.08);
+    }
+
+    .success-icon {
+        width: 24px;
+        height: 24px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 50%;
+
+        background: #10b981;
+        color: white;
+
+        font-size: 13px;
+        font-weight: 800;
+
+        flex-shrink: 0;
+    }
+
+    /* =========================
+       CARD
+    ========================= */
+
+    .holiday-card {
+        background: rgba(255, 255, 255, 0.96);
+
+        border: 1px solid #dbeafe;
+        border-radius: 24px;
+
+        padding: 26px;
+
+        box-shadow:
+            0 20px 50px rgba(14, 165, 233, 0.10),
+            0 4px 12px rgba(15, 23, 42, 0.03);
+    }
+
+    /* =========================
+       DAY ITEM
+    ========================= */
+
+    .holiday-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        min-height: 78px;
+
+        padding: 16px 18px;
+        margin-bottom: 12px;
+
+        background: #f8fdff;
+
+        border: 1px solid #e0f2fe;
+        border-radius: 16px;
+
+        transition:
+            background 0.25s ease,
+            border-color 0.25s ease,
+            transform 0.25s ease,
+            box-shadow 0.25s ease;
+    }
+
+    .holiday-item:last-child {
+        margin-bottom: 0;
+    }
+
+    .holiday-item:hover {
+        background: #f0f9ff;
+        border-color: #7dd3fc;
+
+        transform: translateY(-1px);
+
+        box-shadow:
+            0 8px 20px rgba(14, 165, 233, 0.08);
+    }
+
+    /* =========================
+       LEFT SIDE
+    ========================= */
+
+    .day-left {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        min-width: 0;
+    }
+
+    .day-icon {
+        width: 46px;
+        height: 46px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        flex-shrink: 0;
+
+        border-radius: 13px;
+
+        background: #e0f2fe;
+        color: #0284c7;
+
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.5px;
+    }
+
+    .day-name {
+        font-size: 16px;
+        line-height: 1.3;
+        font-weight: 700;
+        color: #0f172a;
+    }
+
+    .day-description {
+        margin-top: 4px;
+
+        font-size: 12px;
+        line-height: 1.3;
+
+        color: #64748b;
+    }
+
+    /* =========================
+       SWITCH
+    ========================= */
+
+    .holiday-switch {
+        position: relative;
+
+        width: 54px;
+        height: 30px;
+
+        display: block;
+
+        flex-shrink: 0;
+
+        cursor: pointer;
+    }
+
+    .holiday-switch input {
+        position: absolute;
+
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .holiday-slider {
+        position: absolute;
+        inset: 0;
+
+        background: #cbd5e1;
+
+        border-radius: 30px;
+
+        cursor: pointer;
+
+        transition: background 0.25s ease;
+    }
+
+    .holiday-slider::before {
+        content: "";
+
+        position: absolute;
+
+        width: 24px;
+        height: 24px;
+
+        left: 3px;
+        top: 3px;
+
+        background: #ffffff;
+
+        border-radius: 50%;
+
+        box-shadow:
+            0 2px 6px rgba(0, 0, 0, 0.18);
+
+        transition: transform 0.25s ease;
+    }
+
+    .holiday-switch input:checked + .holiday-slider {
+        background: #0ea5e9;
+    }
+
+    .holiday-switch input:checked + .holiday-slider::before {
+        transform: translateX(24px);
+    }
+    .btn
+    {
+        display: block;
+        color: white;
+        width: 100%;
+         background: linear-gradient(
+            135deg,
+            #38bdf8 0%,
+            #0284c7 100%
+        );
+    }
+
+    /* =========================
+       SAVE BUTTON
+    ========================= */
+
+    .save-holiday-btn {
+        width: 100%;
+
+        margin-top: 24px;
+        padding: 16px 20px;
+
+        border: none;
+        border-radius: 15px;
+
+        background: linear-gradient(
+            135deg,
+            #38bdf8 0%,
+            #0284c7 100%
+        );
+
+        color: #ffffff;
+
+        font-size: 15px;
+        font-weight: 700;
+
+        cursor: pointer;
+
+        box-shadow:
+            0 10px 25px rgba(14, 165, 233, 0.25);
+
+        transition:
+            transform 0.25s ease,
+            box-shadow 0.25s ease;
+    }
+
+    .save-holiday-btn:hover {
+        transform: translateY(-2px);
+
+        box-shadow:
+            0 14px 30px rgba(14, 165, 233, 0.32);
+    }
+
+    .save-holiday-btn:active {
+        transform: translateY(0);
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @@media (max-width: 600px) {
+        .holiday-page {
+            padding: 30px 15px;
+        }
+
+        .holiday-heading h1 {
+            font-size: 28px;
+        }
+
+        .holiday-card {
+            padding: 16px;
+            border-radius: 20px;
+        }
+
+        .holiday-item {
+            padding: 14px;
+        }
+
+        .day-icon {
+            width: 42px;
+            height: 42px;
+        }
+
+        .day-name {
+            font-size: 15px;
+        }
+
+        .holiday-switch {
+            width: 50px;
+            height: 28px;
+        }
+
+        .holiday-slider::before {
+            width: 22px;
+            height: 22px;
+        }
+
+        .holiday-switch input:checked + .holiday-slider::before {
+            transform: translateX(22px);
+        }
+    }
+</style>
+
+
+<div class="holiday-page">
+
+    <div class="holiday-container">
+
+        <!-- HEADER -->
+        <div class="holiday-heading">
+
+            <h1>Set Holidays</h1>
+
+            <p>
+                Select the days that should be treated as weekly holidays.
+            </p>
+
+        </div>
+
+
+        <!-- SUCCESS MESSAGE -->
+        @if (TempData["HolidaySuccess"] != null)
+        {
+            <div class="success-message">
+
+                <div class="success-icon">
+                    ✓
+                </div>
+
+                <span>
+                    @TempData["HolidaySuccess"]
+                </span>
+
+            </div>
+        }
+
+
+        <!-- HOLIDAY CARD -->
+        <div class="holiday-card">
+
+            <form asp-action="Setholydays" method="post">
+
+                @Html.AntiForgeryToken()
+
+
+                @for (int i = 0; i < Model.Count; i++)
+                {
+                    <div class="holiday-item">
+
+                        <div class="day-left">
+
+                            <!-- DAY ABBREVIATION -->
+                            <div class="day-icon">
+                                @Model[i].Day.ToString().Substring(0, 2).ToUpper()
+                            </div>
+
+
+                            <!-- DAY INFORMATION -->
+                            <div>
+
+                                <div class="day-name">
+                                    @Model[i].Day
+                                </div>
+
+                                <div class="day-description">
+
+                                    @if (Model[i].IsHoliday)
+                                    {
+                                        <span>Holiday</span>
+                                    }
+                                    else
+                                    {
+                                        <span>Working day</span>
+                                    }
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- SWITCH -->
+                        <label class="holiday-switch">
+
+                            <input type="hidden"
+                                   name="[@i].Day"
+                                   value="@Model[i].Day" />
+
+                            <input type="checkbox"
+                                   name="[@i].IsHoliday"
+                                   value="true"
+                                   @(Model[i].IsHoliday ? "checked" : "") />
+
+                            <span class="holiday-slider"></span>
+
+                        </label>
+
+                    </div>
+                }
+
+
+                <!-- SAVE -->
+                <button type="button" style=" background: linear-gradient(
+     135deg,
+     #38bdf8 0%,
+     #0284c7 100%
+ ); color:white;border:2px solid white;padding: 10px;">
+                <a href="/dashboard"
+                        >
+                    Back
+                </a>
+                </button>
+                <button type="submit"
+                        class="save-holiday-btn">
+                    Save Holiday Schedule
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
