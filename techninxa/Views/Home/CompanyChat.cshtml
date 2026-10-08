@@ -1,0 +1,4070 @@
+﻿@using Microsoft.AspNetCore.Http
+
+@{
+    var username = Context.Session.GetString("CompanyChatUsername") ?? "Employee";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0" />
+
+    <title>Company Chat</title>
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin />
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+          rel="stylesheet" />
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f5f7fb;
+            color: #111827;
+            overflow: hidden;
+        }
+
+        button,
+        input,
+        textarea {
+            font-family: inherit;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        /* =====================================================
+           MAIN APP
+           ===================================================== */
+
+        .chat-app {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            overflow: hidden;
+            background: #ffffff;
+        }
+
+        /* =====================================================
+           SIDEBAR
+           ===================================================== */
+
+        .chat-sidebar {
+            width: 285px;
+            min-width: 285px;
+            height: 100%;
+            border-right: 1px solid #e5e7eb;
+            background: #ffffff;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar-header {
+            padding: 20px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+        }
+
+        .brand-logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 11px;
+            background: #111827;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 17px;
+        }
+
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .brand-subtitle {
+            font-size: 11px;
+            color: #9ca3af;
+            margin-top: 2px;
+        }
+
+        /* =====================================================
+           SEARCH
+           ===================================================== */
+
+        .search-container {
+            padding: 15px;
+        }
+
+        .search-box {
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            height: 39px;
+            border: 1px solid #e5e7eb;
+            border-radius: 9px;
+            padding: 0 12px 0 36px;
+            outline: none;
+            background: #f9fafb;
+            font-size: 13px;
+        }
+
+        .search-box input:focus {
+            border-color: #93c5fd;
+            background: #ffffff;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 14px;
+            color: #9ca3af;
+            pointer-events: none;
+        }
+
+        /* =====================================================
+           SIDEBAR SECTION
+           ===================================================== */
+
+        .sidebar-section {
+            padding: 0 12px;
+        }
+
+        .section-title {
+            padding: 7px 8px;
+            color: #9ca3af;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+
+        .chat-room {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            padding: 11px;
+            border-radius: 9px;
+            cursor: pointer;
+            background: #eff6ff;
+            color: #1d4ed8;
+        }
+
+        .room-icon {
+            width: 33px;
+            height: 33px;
+            border-radius: 9px;
+            background: #2563eb;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+        }
+
+        .room-info {
+            min-width: 0;
+        }
+
+        .room-name {
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .room-description {
+            margin-top: 2px;
+            color: #6b7280;
+            font-size: 10px;
+        }
+
+        /* =====================================================
+           ONLINE USERS
+           ===================================================== */
+
+        .online-users-container {
+            flex: 1;
+            overflow-y: auto;
+            padding: 10px 12px;
+        }
+
+        .online-user {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px;
+            border-radius: 8px;
+        }
+
+        .online-user:hover {
+            background: #f9fafb;
+        }
+
+        .user-avatar {
+            position: relative;
+            width: 32px;
+            height: 32px;
+            min-width: 32px;
+            border-radius: 50%;
+            background: #e5e7eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 700;
+            color: #374151;
+        }
+
+        .online-dot {
+            position: absolute;
+            width: 9px;
+            height: 9px;
+            right: -1px;
+            bottom: -1px;
+            border: 2px solid #ffffff;
+            border-radius: 50%;
+            background: #22c55e;
+        }
+
+        .user-name {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .no-users {
+            padding: 15px 8px;
+            color: #9ca3af;
+            font-size: 12px;
+        }
+
+        /* =====================================================
+           CURRENT USER
+           ===================================================== */
+
+        .current-user {
+            border-top: 1px solid #e5e7eb;
+            padding: 13px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .current-user-info {
+            min-width: 0;
+            flex: 1;
+        }
+
+        .current-user-name {
+            font-size: 12px;
+            font-weight: 600;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .current-user-status {
+            margin-top: 2px;
+            color: #22c55e;
+            font-size: 10px;
+        }
+
+        /* =====================================================
+           MAIN CHAT
+           ===================================================== */
+
+        .chat-main {
+            min-width: 0;
+            flex: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            background: #ffffff;
+        }
+
+        .chat-header {
+            min-height: 70px;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+        }
+
+        .chat-header-left {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            min-width: 0;
+        }
+
+        .mobile-menu-button {
+            display: none;
+            width: 36px;
+            height: 36px;
+            border: 0;
+            background: #f3f4f6;
+            border-radius: 8px;
+            font-size: 18px;
+        }
+
+        .header-room-icon {
+            width: 40px;
+            height: 40px;
+            min-width: 40px;
+            border-radius: 10px;
+            background: #eff6ff;
+            color: #2563eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .header-status {
+            margin-top: 3px;
+            color: #22c55e;
+            font-size: 10px;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .call-button {
+            width: 39px;
+            height: 39px;
+            border: 1px solid #e5e7eb;
+            border-radius: 9px;
+            background: #ffffff;
+            font-size: 17px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .call-button:hover {
+            background: #f3f4f6;
+        }
+
+        .call-button:disabled {
+            opacity: .4;
+            cursor: not-allowed;
+        }
+
+        /* =====================================================
+           CONNECTION
+           ===================================================== */
+
+        .connection-status {
+            position: absolute;
+            top: 80px;
+            right: 20px;
+            z-index: 10;
+            display: none;
+            padding: 6px 10px;
+            border-radius: 7px;
+            background: #fef2f2;
+            color: #dc2626;
+            font-size: 10px;
+            font-weight: 600;
+        }
+
+        .connection-status.visible {
+            display: block;
+        }
+
+        /* =====================================================
+           MESSAGES
+           ===================================================== */
+
+        .messages-area {
+            flex: 1;
+            min-height: 0;
+            overflow-y: auto;
+            padding: 25px;
+            background: #fafafa;
+        }
+
+        .message {
+            display: flex;
+            margin-bottom: 14px;
+        }
+
+        .message.me {
+            justify-content: flex-end;
+        }
+
+        .message.other {
+            justify-content: flex-start;
+        }
+
+        .message-content {
+            max-width: min(70%, 650px);
+        }
+
+        .message-username {
+            margin: 0 0 4px 4px;
+            color: #6b7280;
+            font-size: 10px;
+            font-weight: 600;
+        }
+
+        .message-bubble {
+            width: fit-content;
+            max-width: 100%;
+            padding: 10px 13px;
+            border-radius: 13px;
+            background: #f1f3f5;
+            color: #111827;
+            font-size: 13px;
+            line-height: 1.5;
+            word-break: break-word;
+        }
+
+        .message.me .message-bubble {
+            background: #2563eb;
+            color: #ffffff;
+            border-bottom-right-radius: 4px;
+        }
+
+        .message.other .message-bubble {
+            border-bottom-left-radius: 4px;
+        }
+
+        .message-bubble a {
+            color: inherit;
+            text-decoration: underline;
+            word-break: break-all;
+        }
+
+        .message-time {
+            margin-top: 3px;
+            padding: 0 4px;
+            color: #9ca3af;
+            font-size: 9px;
+        }
+
+        .message.me .message-time {
+            text-align: right;
+        }
+
+        /* =====================================================
+           EMPTY CHAT
+           ===================================================== */
+
+        .empty-chat {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .empty-chat-icon {
+            width: 55px;
+            height: 55px;
+            margin: 0 auto 12px;
+            border-radius: 16px;
+            background: #eff6ff;
+            color: #2563eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .empty-chat-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .empty-chat-text {
+            margin-top: 5px;
+            color: #9ca3af;
+            font-size: 12px;
+        }
+
+        /* =====================================================
+           COMPOSER
+           ===================================================== */
+
+        .composer-container {
+            padding: 13px 18px 17px;
+            border-top: 1px solid #e5e7eb;
+            background: #ffffff;
+        }
+
+        .composer {
+            display: flex;
+            align-items: flex-end;
+            gap: 8px;
+            border: 1px solid #e5e7eb;
+            border-radius: 13px;
+            padding: 7px;
+            background: #ffffff;
+        }
+
+        .composer:focus-within {
+            border-color: #93c5fd;
+        }
+
+        .composer-action {
+            width: 35px;
+            height: 35px;
+            min-width: 35px;
+            border: 0;
+            border-radius: 8px;
+            background: #f3f4f6;
+            color: #4b5563;
+            font-size: 17px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .composer-action:hover {
+            background: #e5e7eb;
+        }
+
+        .composer-action:disabled {
+            opacity: .5;
+            cursor: not-allowed;
+        }
+
+        #messageInput {
+            flex: 1;
+            min-width: 0;
+            min-height: 35px;
+            max-height: 120px;
+            resize: none;
+            border: 0;
+            outline: none;
+            padding: 8px 5px;
+            font-size: 13px;
+            line-height: 1.4;
+        }
+
+        .send-button {
+            width: 35px;
+            height: 35px;
+            min-width: 35px;
+            border: 0;
+            border-radius: 8px;
+            background: #2563eb;
+            color: #ffffff;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .send-button:hover {
+            background: #1d4ed8;
+        }
+
+        .send-button:disabled {
+            opacity: .5;
+            cursor: not-allowed;
+        }
+
+        /* =====================================================
+           EMOJI PICKER
+           ===================================================== */
+
+        .emoji-wrapper {
+            position: relative;
+        }
+
+        .emoji-picker {
+            position: absolute;
+            bottom: 48px;
+            left: 0;
+            width: 280px;
+            max-height: 260px;
+            overflow-y: auto;
+            padding: 10px;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            background: #ffffff;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, .12);
+            display: none;
+            z-index: 100;
+        }
+
+        .emoji-picker.show {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            gap: 3px;
+        }
+
+        .emoji-item {
+            width: 29px;
+            height: 29px;
+            border: 0;
+            border-radius: 7px;
+            background: transparent;
+            font-size: 18px;
+        }
+
+        .emoji-item:hover {
+            background: #f3f4f6;
+        }
+
+        /* =====================================================
+           FILE ATTACHMENTS
+           ===================================================== */
+
+        .attachment-bubble {
+            padding: 6px !important;
+        }
+
+        .chat-image-attachment {
+            max-width: 280px;
+        }
+
+        .chat-image {
+            display: block;
+            max-width: 280px;
+            max-height: 320px;
+            width: auto;
+            height: auto;
+            border-radius: 9px;
+            cursor: pointer;
+        }
+
+        .attachment-file-name {
+            padding: 7px 8px 3px;
+            font-size: 12px;
+            word-break: break-word;
+        }
+
+        .chat-file-attachment {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            min-width: 210px;
+            max-width: 300px;
+            padding: 10px;
+            border-radius: 9px;
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .chat-file-attachment:hover {
+            background: rgba(0, 0, 0, .05);
+        }
+
+        .file-icon {
+            width: 38px;
+            height: 38px;
+            min-width: 38px;
+            border-radius: 8px;
+            background: rgba(37, 99, 235, .1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 19px;
+        }
+
+        .file-details {
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .file-details strong {
+            font-size: 12px;
+            font-weight: 600;
+            word-break: break-word;
+        }
+
+        .file-details small {
+            margin-top: 3px;
+            font-size: 10px;
+            opacity: .65;
+        }
+
+        /* =====================================================
+           CALL MODAL
+           ===================================================== */
+
+        .call-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 1000;
+            background: rgba(17, 24, 39, .72);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .call-overlay.show {
+            display: flex;
+        }
+
+        .call-window {
+            position: relative;
+            width: min(900px, 100%);
+            height: min(650px, 90vh);
+            overflow: hidden;
+            border-radius: 18px;
+            background: #111827;
+            box-shadow: 0 25px 70px rgba(0, 0, 0, .35);
+        }
+
+        .call-topbar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 20;
+            height: 60px;
+            padding: 0 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: #ffffff;
+            background: linear-gradient(
+                to bottom,
+                rgba(0,0,0,.45),
+                transparent
+            );
+        }
+
+        .call-person {
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .call-type {
+            margin-top: 2px;
+            color: rgba(255,255,255,.65);
+            font-size: 10px;
+        }
+
+        .call-close {
+            width: 34px;
+            height: 34px;
+            border: 0;
+            border-radius: 50%;
+            background: rgba(255,255,255,.12);
+            color: #ffffff;
+            font-size: 17px;
+        }
+
+        .remote-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            background: #111827;
+        }
+
+        .local-video {
+            position: absolute;
+            right: 18px;
+            bottom: 95px;
+            z-index: 15;
+            width: 180px;
+            height: 125px;
+            object-fit: cover;
+            border-radius: 12px;
+            background: #1f2937;
+            border: 2px solid rgba(255,255,255,.3);
+        }
+
+        .voice-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: #ffffff;
+        }
+
+        .voice-avatar {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: #2563eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 35px;
+            font-weight: 700;
+        }
+
+        .voice-name {
+            margin-top: 15px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 19px;
+            font-weight: 700;
+        }
+
+        .voice-status {
+            margin-top: 5px;
+            color: rgba(255,255,255,.6);
+            font-size: 12px;
+        }
+
+        .call-controls {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 20px;
+            z-index: 30;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .call-control {
+            width: 48px;
+            height: 48px;
+            border: 0;
+            border-radius: 50%;
+            background: rgba(255,255,255,.14);
+            color: #ffffff;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .call-control:hover {
+            background: rgba(255,255,255,.23);
+        }
+
+        .call-control.active {
+            background: #ffffff;
+            color: #111827;
+        }
+
+        .call-control.end-call {
+            background: #ef4444;
+        }
+
+        .call-control.end-call:hover {
+            background: #dc2626;
+        }
+
+        /* =====================================================
+           INCOMING CALL
+           ===================================================== */
+
+        .incoming-call {
+            position: fixed;
+            right: 22px;
+            bottom: 22px;
+            z-index: 1100;
+            width: 320px;
+            padding: 18px;
+            border-radius: 15px;
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 18px 50px rgba(0,0,0,.18);
+            display: none;
+        }
+
+        .incoming-call.show {
+            display: block;
+        }
+
+        .incoming-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 15px;
+        }
+
+        .incoming-text {
+            margin-top: 4px;
+            color: #6b7280;
+            font-size: 12px;
+        }
+
+        .incoming-actions {
+            display: flex;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .incoming-actions button {
+            flex: 1;
+            height: 38px;
+            border: 0;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        .accept-call {
+            background: #22c55e;
+            color: #ffffff;
+        }
+
+        .reject-call {
+            background: #fee2e2;
+            color: #dc2626;
+        }
+
+        /* =====================================================
+           LOADING
+           ===================================================== */
+
+        .uploading-indicator {
+            position: fixed;
+            left: 50%;
+            bottom: 80px;
+            transform: translateX(-50%);
+            z-index: 500;
+            display: none;
+            padding: 8px 13px;
+            border-radius: 8px;
+            background: #111827;
+            color: #ffffff;
+            font-size: 11px;
+            box-shadow: 0 8px 30px rgba(0,0,0,.2);
+        }
+
+        .uploading-indicator.show {
+            display: block;
+        }
+
+        /* =====================================================
+           MOBILE
+           ===================================================== */
+
+        @@media (max-width: 800px) {
+
+            .chat-sidebar {
+                position: fixed;
+                top: 0;
+                bottom: 0;
+                left: -290px;
+                z-index: 900;
+                transition: left .2s ease;
+                box-shadow: 10px 0 30px rgba(0,0,0,.08);
+            }
+
+            .chat-sidebar.open {
+                left: 0;
+            }
+
+            .mobile-menu-button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .chat-header {
+                padding: 0 12px;
+            }
+
+            .messages-area {
+                padding: 15px;
+            }
+
+            .message-content {
+                max-width: 82%;
+            }
+
+            .composer-container {
+                padding: 10px;
+            }
+
+            .call-window {
+                width: 100%;
+                height: 100%;
+                max-height: none;
+                border-radius: 0;
+            }
+
+            .local-video {
+                width: 125px;
+                height: 90px;
+                right: 10px;
+                bottom: 90px;
+            }
+
+            .incoming-call {
+                left: 15px;
+                right: 15px;
+                bottom: 15px;
+                width: auto;
+            }
+        }
+
+        @@media (max-width: 500px) {
+
+            .header-room-icon {
+                display: none;
+            }
+
+            .header-title {
+                font-size: 14px;
+            }
+
+            .header-actions {
+                gap: 4px;
+            }
+
+            .call-button {
+                width: 34px;
+                height: 34px;
+            }
+
+            .chat-image {
+                max-width: 220px;
+                max-height: 260px;
+            }
+
+            .chat-file-attachment {
+                min-width: 180px;
+                max-width: 240px;
+            }
+
+            .emoji-picker {
+                width: 250px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="chat-app">
+
+        <!-- ==================================================
+             SIDEBAR
+             ================================================== -->
+
+        <aside class="chat-sidebar" id="chatSidebar">
+
+            <div class="sidebar-header">
+
+                <div class="brand">
+
+                    <div class="brand-logo">
+                        T
+                    </div>
+
+                    <div class="brand-text">
+
+                        <div class="brand-title">
+                            Techninxa
+                        </div>
+
+                        <div class="brand-subtitle">
+                            Company Chat
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="search-container">
+
+                <div class="search-box">
+
+                    <span class="search-icon">
+                        🔎
+                    </span>
+
+                    <input
+                        type="text"
+                        id="userSearch"
+                        placeholder="Search people..." />
+
+                </div>
+
+            </div>
+
+            <div class="sidebar-section">
+
+                <div class="section-title">
+                    Rooms
+                </div>
+
+                <div class="chat-room">
+
+                    <div class="room-icon">
+                        💬
+                    </div>
+
+                    <div class="room-info">
+
+                        <div class="room-name">
+                            Company General
+                        </div>
+
+                        <div class="room-description">
+                            Team conversation
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="sidebar-section"
+                 style="margin-top:12px;">
+
+                <div class="section-title">
+                    Online
+                </div>
+
+            </div>
+
+            <div class="online-users-container"
+                 id="onlineUsers">
+
+                <div class="no-users">
+                    Connecting...
+                </div>
+
+            </div>
+
+            <div class="current-user">
+
+                <div class="user-avatar">
+
+                    <span id="currentUserAvatar">
+                        @username.Substring(0, 1).ToUpper()
+                    </span>
+
+                    <span class="online-dot"></span>
+
+                </div>
+
+                <div class="current-user-info">
+
+                    <div class="current-user-name">
+                        @username
+                    </div>
+
+                    <div class="current-user-status">
+                        ● Online
+                    </div>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <!-- ==================================================
+             MAIN CHAT
+             ================================================== -->
+
+        <main class="chat-main">
+
+            <div class="chat-header">
+
+                <div class="chat-header-left">
+
+                    <button
+                        type="button"
+                        class="mobile-menu-button"
+                        id="mobileMenuButton">
+                        ☰
+                    </button>
+
+                    <div class="header-room-icon">
+                        💬
+                    </div>
+
+                    <div>
+
+                        <div class="header-title">
+                            Company General
+                        </div>
+
+                        <div class="header-status">
+                            <span id="onlineCount">
+                                0
+                            </span>
+                            online
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="header-actions">
+
+                    <button
+                        type="button"
+                        class="call-button"
+                        id="voiceCallButton"
+                        title="Voice call">
+                        📞
+                    </button>
+
+                    <button
+                        type="button"
+                        class="call-button"
+                        id="videoCallButton"
+                        title="Video call">
+                        🎥
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="connection-status"
+                id="connectionStatus">
+                Reconnecting...
+            </div>
+
+
+            <!-- ==================================================
+                 MESSAGES
+                 ================================================== -->
+
+            <div
+                class="messages-area"
+                id="messagesArea">
+
+                <div class="empty-chat"
+                     id="emptyChat">
+
+                    <div>
+
+                        <div class="empty-chat-icon">
+                            💬
+                        </div>
+
+                        <div class="empty-chat-title">
+                            Company General
+                        </div>
+
+                        <div class="empty-chat-text">
+                            Start a conversation with your team.
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==================================================
+                 COMPOSER
+                 ================================================== -->
+
+            <div class="composer-container">
+
+                <div class="composer">
+
+                    <div class="emoji-wrapper">
+
+                        <button
+                            type="button"
+                            class="composer-action"
+                            id="emojiButton"
+                            title="Emoji">
+                            😊
+                        </button>
+
+                        <div
+                            class="emoji-picker"
+                            id="emojiPicker">
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="composer-action"
+                        id="attachFileButton"
+                        title="Attach file">
+                        📎
+                    </button>
+
+
+                    <input
+                        type="file"
+                        id="chatFileInput"
+                        hidden
+                        accept=".jpg,.jpeg,.png,.gif,.webp,.pdf,.doc,.docx,.xls,.xlsx,.zip" />
+
+
+                    <textarea
+                        id="messageInput"
+                        rows="1"
+                        maxlength="1000"
+                        placeholder="Type a message..."></textarea>
+
+
+                    <button
+                        type="button"
+                        class="send-button"
+                        id="sendButton"
+                        title="Send">
+                        ➤
+                    </button>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <!-- ======================================================
+         UPLOAD STATUS
+         ====================================================== -->
+
+    <div
+        class="uploading-indicator"
+        id="uploadingIndicator">
+        Uploading file...
+    </div>
+
+
+    <!-- ======================================================
+         CALL WINDOW
+         ====================================================== -->
+
+    <div
+        class="call-overlay"
+        id="callOverlay">
+
+        <div class="call-window">
+
+            <div class="call-topbar">
+
+                <div>
+
+                    <div
+                        class="call-person"
+                        id="callPerson">
+                        Company User
+                    </div>
+
+                    <div
+                        class="call-type"
+                        id="callType">
+                        Voice call
+                    </div>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="call-close"
+                    id="callCloseButton">
+                    ✕
+                </button>
+
+            </div>
+
+
+            <!-- Voice placeholder -->
+
+            <div
+                class="voice-placeholder"
+                id="voicePlaceholder">
+
+                <div
+                    class="voice-avatar"
+                    id="callAvatar">
+                    U
+                </div>
+
+                <div
+                    class="voice-name"
+                    id="voiceName">
+                    User
+                </div>
+
+                <div
+                    class="voice-status"
+                    id="voiceStatus">
+                    Calling...
+                </div>
+
+            </div>
+
+
+            <!-- Remote video -->
+
+            <video
+                id="remoteVideo"
+                class="remote-video"
+                autoplay
+                playsinline
+                style="display:none;">
+            </video>
+
+
+            <!-- Local video -->
+
+            <video
+                id="localVideo"
+                class="local-video"
+                autoplay
+                muted
+                playsinline
+                style="display:none;">
+            </video>
+
+
+            <!-- Call controls -->
+
+            <div class="call-controls">
+
+                <button
+                    type="button"
+                    class="call-control"
+                    id="muteButton"
+                    title="Mute">
+                    🎤
+                </button>
+
+                <button
+                    type="button"
+                    class="call-control"
+                    id="cameraButton"
+                    title="Camera"
+                    style="display:none;">
+                    📹
+                </button>
+
+                <button
+                    type="button"
+                    class="call-control end-call"
+                    id="endCallButton"
+                    title="End call">
+                    📞
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ======================================================
+         INCOMING CALL
+         ====================================================== -->
+
+    <div
+        class="incoming-call"
+        id="incomingCall">
+
+        <div class="incoming-title">
+            Incoming call
+        </div>
+
+        <div
+            class="incoming-text"
+            id="incomingCallText">
+            Someone is calling you...
+        </div>
+
+        <div class="incoming-actions">
+
+            <button
+                type="button"
+                class="accept-call"
+                id="acceptCallButton">
+                Accept
+            </button>
+
+            <button
+                type="button"
+                class="reject-call"
+                id="rejectCallButton">
+                Reject
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ======================================================
+         SIGNALR
+         ====================================================== -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/8.0.7/signalr.min.js"></script>
+
+
+    <script>
+
+        /* =====================================================
+           CURRENT USER
+           ===================================================== */
+
+        const currentUsername =
+            @Html.Raw(
+                System.Text.Json.JsonSerializer.Serialize(username)
+            );
+
+
+        /* =====================================================
+           DOM ELEMENTS
+           ===================================================== */
+
+        const messagesArea =
+            document.getElementById("messagesArea");
+
+        const messageInput =
+            document.getElementById("messageInput");
+
+        const sendButton =
+            document.getElementById("sendButton");
+
+        const emptyChat =
+            document.getElementById("emptyChat");
+
+        const onlineUsersContainer =
+            document.getElementById("onlineUsers");
+
+        const onlineCount =
+            document.getElementById("onlineCount");
+
+        const userSearch =
+            document.getElementById("userSearch");
+
+        const connectionStatus =
+            document.getElementById("connectionStatus");
+
+        const chatSidebar =
+            document.getElementById("chatSidebar");
+
+        const mobileMenuButton =
+            document.getElementById("mobileMenuButton");
+
+        const emojiButton =
+            document.getElementById("emojiButton");
+
+        const emojiPicker =
+            document.getElementById("emojiPicker");
+
+        const attachFileButton =
+            document.getElementById("attachFileButton");
+
+        const chatFileInput =
+            document.getElementById("chatFileInput");
+
+        const uploadingIndicator =
+            document.getElementById("uploadingIndicator");
+
+        const voiceCallButton =
+            document.getElementById("voiceCallButton");
+
+        const videoCallButton =
+            document.getElementById("videoCallButton");
+
+        const callOverlay =
+            document.getElementById("callOverlay");
+
+        const callPerson =
+            document.getElementById("callPerson");
+
+        const callType =
+            document.getElementById("callType");
+
+        const callAvatar =
+            document.getElementById("callAvatar");
+
+        const voiceName =
+            document.getElementById("voiceName");
+
+        const voiceStatus =
+            document.getElementById("voiceStatus");
+
+        const voicePlaceholder =
+            document.getElementById("voicePlaceholder");
+
+        const remoteVideo =
+            document.getElementById("remoteVideo");
+
+        const localVideo =
+            document.getElementById("localVideo");
+
+        const muteButton =
+            document.getElementById("muteButton");
+
+        const cameraButton =
+            document.getElementById("cameraButton");
+
+        const endCallButton =
+            document.getElementById("endCallButton");
+
+        const callCloseButton =
+            document.getElementById("callCloseButton");
+
+        const incomingCall =
+            document.getElementById("incomingCall");
+
+        const incomingCallText =
+            document.getElementById("incomingCallText");
+
+        const acceptCallButton =
+            document.getElementById("acceptCallButton");
+
+        const rejectCallButton =
+            document.getElementById("rejectCallButton");
+
+
+        /* =====================================================
+           STATE
+           ===================================================== */
+
+        const displayedMessageIds =
+            new Set();
+
+        let onlineUsers = [];
+
+        let isSending = false;
+
+        let localStream = null;
+
+        let peerConnection = null;
+
+        let currentCallUser = null;
+
+        let currentCallType = null;
+
+        let incomingCallData = null;
+
+        let isMuted = false;
+
+        let isCameraOff = false;
+
+        let pendingIceCandidates = [];
+
+
+        /* =====================================================
+           SIGNALR CONNECTION
+           ===================================================== */
+
+        const connection =
+            new signalR.HubConnectionBuilder()
+                .withUrl("/companyChatHub")
+                .withAutomaticReconnect([
+                    0,
+                    2000,
+                    5000,
+                    10000,
+                    15000
+                ])
+                .configureLogging(
+                    signalR.LogLevel.Warning
+                )
+                .build();
+
+
+        /* =====================================================
+           SIGNALR - RECEIVE MESSAGE
+           ===================================================== */
+
+        connection.on(
+            "ReceiveMessage",
+            function (
+                id,
+                username,
+                message,
+                time
+            ) {
+
+                addMessage(
+                    id,
+                    username,
+                    message,
+                    time
+                );
+
+            }
+        );
+
+
+        /* =====================================================
+           SIGNALR - ONLINE USERS
+           ===================================================== */
+
+        connection.on(
+            "OnlineUsers",
+            function (users) {
+
+                onlineUsers =
+                    Array.isArray(users)
+                        ? users
+                        : [];
+
+                renderOnlineUsers(
+                    onlineUsers
+                );
+
+            }
+        );
+
+
+        connection.on(
+            "UserOnline",
+            function (username) {
+
+                if (
+                    !onlineUsers.some(
+                        x =>
+                            x.toLowerCase() ===
+                            username.toLowerCase()
+                    )
+                ) {
+
+                    onlineUsers.push(username);
+
+                }
+
+                renderOnlineUsers(
+                    onlineUsers
+                );
+
+            }
+        );
+
+
+        connection.on(
+            "UserOffline",
+            function (username) {
+
+                onlineUsers =
+                    onlineUsers.filter(
+                        x =>
+                            x.toLowerCase() !==
+                            username.toLowerCase()
+                    );
+
+                renderOnlineUsers(
+                    onlineUsers
+                );
+
+            }
+        );
+
+
+        /* =====================================================
+           SIGNALR - CALL EVENTS
+           ===================================================== */
+
+        connection.on(
+            "IncomingCall",
+            function (
+                caller,
+                callType,
+                offer
+            ) {
+
+                incomingCallData = {
+                    caller: caller,
+                    callType: callType,
+                    offer: offer
+                };
+
+                incomingCallText.textContent =
+                    caller +
+                    " is calling you (" +
+                    callType +
+                    ").";
+
+                incomingCall.classList.add(
+                    "show"
+                );
+
+            }
+        );
+
+
+        connection.on(
+            "CallAccepted",
+            async function (answer) {
+
+                if (!peerConnection) {
+                    return;
+                }
+
+                await peerConnection.setRemoteDescription(
+                    new RTCSessionDescription(answer)
+                );
+
+                voiceStatus.textContent =
+                    "Connected";
+
+                await processPendingIceCandidates();
+
+            }
+        );
+
+
+        connection.on(
+            "CallRejected",
+            function () {
+
+                voiceStatus.textContent =
+                    "Call rejected.";
+
+                setTimeout(
+                    closeCall,
+                    1200
+                );
+
+            }
+        );
+
+
+        connection.on(
+            "CallEnded",
+            function () {
+
+                closeCall();
+
+            }
+        );
+
+
+        connection.on(
+            "IceCandidate",
+            async function (candidate) {
+
+                if (!peerConnection) {
+                    return;
+                }
+
+                try {
+
+                    if (
+                        peerConnection.remoteDescription
+                    ) {
+
+                        await peerConnection.addIceCandidate(
+                            new RTCIceCandidate(candidate)
+                        );
+
+                    }
+                    else {
+
+                        pendingIceCandidates.push(
+                            candidate
+                        );
+
+                    }
+
+                }
+                catch (error) {
+
+                    console.error(
+                        "ICE candidate error:",
+                        error
+                    );
+
+                }
+
+            }
+        );
+
+
+        /* =====================================================
+           PEER CONNECTION
+           ===================================================== */
+
+        function createPeerConnection() {
+
+            const config = {
+
+                iceServers: [
+
+                    {
+                        urls:
+                            "stun:stun.l.google.com:19302"
+                    }
+
+                ]
+
+            };
+
+            peerConnection =
+                new RTCPeerConnection(config);
+
+
+            peerConnection.onicecandidate =
+                async function (event) {
+
+                    if (
+                        event.candidate &&
+                        currentCallUser
+                    ) {
+
+                        try {
+
+                            await connection.invoke(
+                                "SendIceCandidate",
+                                currentCallUser,
+                                event.candidate
+                            );
+
+                        }
+                        catch (error) {
+
+                            console.error(
+                                "Send ICE error:",
+                                error
+                            );
+
+                        }
+
+                    }
+
+                };
+
+
+            peerConnection.ontrack =
+                function (event) {
+
+                    if (
+                        event.streams &&
+                        event.streams[0]
+                    ) {
+
+                        remoteVideo.srcObject =
+                            event.streams[0];
+
+                    }
+
+                };
+
+
+            peerConnection.onconnectionstatechange =
+                function () {
+
+                    if (!peerConnection) {
+                        return;
+                    }
+
+                    const state =
+                        peerConnection.connectionState;
+
+                    console.log(
+                        "WebRTC state:",
+                        state
+                    );
+
+                    if (state === "connected") {
+
+                        voiceStatus.textContent =
+                            "Connected";
+
+                    }
+
+                    if (
+                        state === "disconnected" ||
+                        state === "failed" ||
+                        state === "closed"
+                    ) {
+
+                        voiceStatus.textContent =
+                            "Connection ended.";
+
+                    }
+
+                };
+
+
+            return peerConnection;
+        }
+
+
+        /* =====================================================
+           START VOICE CALL
+           ===================================================== */
+
+        async function startVoiceCall(
+            targetUser
+        ) {
+
+            if (!targetUser) {
+
+                alert(
+                    "Select an online user first."
+                );
+
+                return;
+
+            }
+
+            if (
+                targetUser.toLowerCase() ===
+                currentUsername.toLowerCase()
+            ) {
+
+                alert(
+                    "You cannot call yourself."
+                );
+
+                return;
+
+            }
+
+            try {
+
+                currentCallUser =
+                    targetUser;
+
+                currentCallType =
+                    "voice";
+
+                openCallWindow(
+                    targetUser,
+                    "Voice call"
+                );
+
+                voiceStatus.textContent =
+                    "Requesting microphone...";
+
+
+                localStream =
+                    await navigator.mediaDevices.getUserMedia(
+                        {
+                            audio: true,
+                            video: false
+                        }
+                    );
+
+
+                createPeerConnection();
+
+
+                localStream
+                    .getTracks()
+                    .forEach(
+                        track =>
+                            peerConnection.addTrack(
+                                track,
+                                localStream
+                            )
+                    );
+
+
+                const offer =
+                    await peerConnection.createOffer();
+
+                await peerConnection.setLocalDescription(
+                    offer
+                );
+
+
+                await connection.invoke(
+                    "CallUser",
+                    targetUser,
+                    "voice",
+                    offer
+                );
+
+
+                voiceStatus.textContent =
+                    "Calling " +
+                    targetUser +
+                    "...";
+
+            }
+            catch (error) {
+
+                console.error(
+                    "Voice call error:",
+                    error
+                );
+
+                alert(
+                    "Unable to start voice call. Please allow microphone access."
+                );
+
+                closeCall();
+
+            }
+
+        }
+
+
+        /* =====================================================
+           START VIDEO CALL
+           ===================================================== */
+
+        async function startVideoCall(
+            targetUser
+        ) {
+
+            if (!targetUser) {
+
+                alert(
+                    "Select an online user first."
+                );
+
+                return;
+
+            }
+
+            if (
+                targetUser.toLowerCase() ===
+                currentUsername.toLowerCase()
+            ) {
+
+                alert(
+                    "You cannot call yourself."
+                );
+
+                return;
+
+            }
+
+            try {
+
+                currentCallUser =
+                    targetUser;
+
+                currentCallType =
+                    "video";
+
+                openCallWindow(
+                    targetUser,
+                    "Video call"
+                );
+
+                voiceStatus.textContent =
+                    "Requesting camera and microphone...";
+
+
+                localStream =
+                    await navigator.mediaDevices.getUserMedia(
+                        {
+                            audio: true,
+                            video: true
+                        }
+                    );
+
+
+                localVideo.srcObject =
+                    localStream;
+
+                localVideo.style.display =
+                    "block";
+
+
+                remoteVideo.style.display =
+                    "block";
+
+                voicePlaceholder.style.display =
+                    "none";
+
+                cameraButton.style.display =
+                    "flex";
+
+
+                createPeerConnection();
+
+
+                localStream
+                    .getTracks()
+                    .forEach(
+                        track =>
+                            peerConnection.addTrack(
+                                track,
+                                localStream
+                            )
+                    );
+
+
+                const offer =
+                    await peerConnection.createOffer();
+
+                await peerConnection.setLocalDescription(
+                    offer
+                );
+
+
+                await connection.invoke(
+                    "CallUser",
+                    targetUser,
+                    "video",
+                    offer
+                );
+
+
+                voiceStatus.textContent =
+                    "Calling " +
+                    targetUser +
+                    "...";
+
+            }
+            catch (error) {
+
+                console.error(
+                    "Video call error:",
+                    error
+                );
+
+                alert(
+                    "Unable to start video call. Please allow camera and microphone access."
+                );
+
+                closeCall();
+
+            }
+
+        }
+
+
+        /* =====================================================
+           ACCEPT CALL
+           ===================================================== */
+
+        acceptCallButton.addEventListener(
+            "click",
+            async function () {
+
+                if (!incomingCallData) {
+                    return;
+                }
+
+                const data =
+                    incomingCallData;
+
+                incomingCall.classList.remove(
+                    "show"
+                );
+
+                try {
+
+                    currentCallUser =
+                        data.caller;
+
+                    currentCallType =
+                        data.callType;
+
+                    openCallWindow(
+                        data.caller,
+                        data.callType === "video"
+                            ? "Video call"
+                            : "Voice call"
+                    );
+
+
+                    const wantsVideo =
+                        data.callType === "video";
+
+
+                    localStream =
+                        await navigator.mediaDevices.getUserMedia(
+                            {
+                                audio: true,
+                                video: wantsVideo
+                            }
+                        );
+
+
+                    if (wantsVideo) {
+
+                        localVideo.srcObject =
+                            localStream;
+
+                        localVideo.style.display =
+                            "block";
+
+                        remoteVideo.style.display =
+                            "block";
+
+                        voicePlaceholder.style.display =
+                            "none";
+
+                        cameraButton.style.display =
+                            "flex";
+
+                    }
+
+
+                    createPeerConnection();
+
+
+                    localStream
+                        .getTracks()
+                        .forEach(
+                            track =>
+                                peerConnection.addTrack(
+                                    track,
+                                    localStream
+                                )
+                        );
+
+
+                    await peerConnection.setRemoteDescription(
+                        new RTCSessionDescription(
+                            data.offer
+                        )
+                    );
+
+
+                    await processPendingIceCandidates();
+
+
+                    const answer =
+                        await peerConnection.createAnswer();
+
+
+                    await peerConnection.setLocalDescription(
+                        answer
+                    );
+
+
+                    await connection.invoke(
+                        "AcceptCall",
+                        data.caller,
+                        answer
+                    );
+
+
+                    voiceStatus.textContent =
+                        "Connected";
+
+                }
+                catch (error) {
+
+                    console.error(
+                        "Accept call error:",
+                        error
+                    );
+
+                    closeCall();
+
+                }
+
+                incomingCallData =
+                    null;
+
+            }
+        );
+
+
+        /* =====================================================
+           REJECT CALL
+           ===================================================== */
+
+        rejectCallButton.addEventListener(
+            "click",
+            async function () {
+
+                if (!incomingCallData) {
+                    return;
+                }
+
+                try {
+
+                    await connection.invoke(
+                        "RejectCall",
+                        incomingCallData.caller
+                    );
+
+                }
+                catch (error) {
+
+                    console.error(
+                        error
+                    );
+
+                }
+
+                incomingCallData =
+                    null;
+
+                incomingCall.classList.remove(
+                    "show"
+                );
+
+            }
+        );
+
+
+        /* =====================================================
+           ICE CANDIDATES
+           ===================================================== */
+
+        async function processPendingIceCandidates() {
+
+            if (!peerConnection) {
+                return;
+            }
+
+            for (
+                const candidate
+                of pendingIceCandidates
+            ) {
+
+                try {
+
+                    await peerConnection.addIceCandidate(
+                        new RTCIceCandidate(candidate)
+                    );
+
+                }
+                catch (error) {
+
+                    console.error(
+                        error
+                    );
+
+                }
+
+            }
+
+            pendingIceCandidates = [];
+
+        }
+
+
+        /* =====================================================
+           OPEN CALL WINDOW
+           ===================================================== */
+
+        function openCallWindow(
+            user,
+            type
+        ) {
+
+            callPerson.textContent =
+                user;
+
+            callType.textContent =
+                type;
+
+            voiceName.textContent =
+                user;
+
+            callAvatar.textContent =
+                user
+                    .substring(0, 1)
+                    .toUpperCase();
+
+            voiceStatus.textContent =
+                "Calling...";
+
+            callOverlay.classList.add(
+                "show"
+            );
+
+            if (type === "Video call") {
+
+                remoteVideo.style.display =
+                    "block";
+
+                voicePlaceholder.style.display =
+                    "none";
+
+                cameraButton.style.display =
+                    "flex";
+
+            }
+            else {
+
+                remoteVideo.style.display =
+                    "none";
+
+                localVideo.style.display =
+                    "none";
+
+                voicePlaceholder.style.display =
+                    "flex";
+
+                cameraButton.style.display =
+                    "none";
+
+            }
+
+        }
+
+
+        /* =====================================================
+           CLOSE CALL
+           ===================================================== */
+
+        async function closeCall(
+            notifyRemote = false
+        ) {
+
+            if (
+                notifyRemote &&
+                currentCallUser
+            ) {
+
+                try {
+
+                    await connection.invoke(
+                        "EndCall",
+                        currentCallUser
+                    );
+
+                }
+                catch (error) {
+
+                    console.error(
+                        error
+                    );
+
+                }
+
+            }
+
+
+            if (peerConnection) {
+
+                try {
+
+                    peerConnection.close();
+
+                }
+                catch (error) {
+
+                    console.error(
+                        error
+                    );
+
+                }
+
+                peerConnection =
+                    null;
+
+            }
+
+
+            if (localStream) {
+
+                localStream
+                    .getTracks()
+                    .forEach(
+                        track =>
+                            track.stop()
+                    );
+
+                localStream =
+                    null;
+
+            }
+
+
+            remoteVideo.srcObject =
+                null;
+
+            localVideo.srcObject =
+                null;
+
+
+            callOverlay.classList.remove(
+                "show"
+            );
+
+
+            currentCallUser =
+                null;
+
+            currentCallType =
+                null;
+
+            pendingIceCandidates =
+                [];
+
+            isMuted =
+                false;
+
+            isCameraOff =
+                false;
+
+            muteButton.classList.remove(
+                "active"
+            );
+
+            cameraButton.classList.remove(
+                "active"
+            );
+
+            muteButton.textContent =
+                "🎤";
+
+            cameraButton.textContent =
+                "📹";
+
+        }
+
+
+        /* =====================================================
+           END CALL
+           ===================================================== */
+
+        endCallButton.addEventListener(
+            "click",
+            function () {
+
+                closeCall(true);
+
+            }
+        );
+
+
+        callCloseButton.addEventListener(
+            "click",
+            function () {
+
+                closeCall(true);
+
+            }
+        );
+
+
+        /* =====================================================
+           MUTE
+           ===================================================== */
+
+        muteButton.addEventListener(
+            "click",
+            function () {
+
+                if (!localStream) {
+                    return;
+                }
+
+                const audioTracks =
+                    localStream.getAudioTracks();
+
+                if (!audioTracks.length) {
+                    return;
+                }
+
+                isMuted =
+                    !isMuted;
+
+                audioTracks.forEach(
+                    track =>
+                        track.enabled =
+                            !isMuted
+                );
+
+                muteButton.classList.toggle(
+                    "active",
+                    isMuted
+                );
+
+                muteButton.textContent =
+                    isMuted
+                        ? "🔇"
+                        : "🎤";
+
+            }
+        );
+
+
+        /* =====================================================
+           CAMERA
+           ===================================================== */
+
+        cameraButton.addEventListener(
+            "click",
+            function () {
+
+                if (!localStream) {
+                    return;
+                }
+
+                const videoTracks =
+                    localStream.getVideoTracks();
+
+                if (!videoTracks.length) {
+                    return;
+                }
+
+                isCameraOff =
+                    !isCameraOff;
+
+                videoTracks.forEach(
+                    track =>
+                        track.enabled =
+                            !isCameraOff
+                );
+
+                cameraButton.classList.toggle(
+                    "active",
+                    isCameraOff
+                );
+
+                cameraButton.textContent =
+                    isCameraOff
+                        ? "🚫"
+                        : "📹";
+
+            }
+        );
+
+
+        /* =====================================================
+           VOICE CALL BUTTON
+           ===================================================== */
+
+        voiceCallButton.addEventListener(
+            "click",
+            function () {
+
+                const target =
+                    getSelectedOnlineUser();
+
+                if (!target) {
+
+                    alert(
+                        "Click an online user first."
+                    );
+
+                    return;
+
+                }
+
+                startVoiceCall(
+                    target
+                );
+
+            }
+        );
+
+
+        /* =====================================================
+           VIDEO CALL BUTTON
+           ===================================================== */
+
+        videoCallButton.addEventListener(
+            "click",
+            function () {
+
+                const target =
+                    getSelectedOnlineUser();
+
+                if (!target) {
+
+                    alert(
+                        "Click an online user first."
+                    );
+
+                    return;
+
+                }
+
+                startVideoCall(
+                    target
+                );
+
+            }
+        );
+
+
+        /* =====================================================
+           SELECT ONLINE USER
+           ===================================================== */
+
+        let selectedOnlineUser =
+            null;
+
+
+        function getSelectedOnlineUser() {
+
+            if (
+                selectedOnlineUser &&
+                onlineUsers.some(
+                    x =>
+                        x.toLowerCase() ===
+                        selectedOnlineUser.toLowerCase()
+                )
+            ) {
+
+                return selectedOnlineUser;
+
+            }
+
+
+            const available =
+                onlineUsers.find(
+                    x =>
+                        x.toLowerCase() !==
+                        currentUsername.toLowerCase()
+                );
+
+            return available || null;
+
+        }
+
+
+        /* =====================================================
+           RENDER ONLINE USERS
+           ===================================================== */
+
+        function renderOnlineUsers(
+            users
+        ) {
+
+            onlineUsersContainer.innerHTML =
+                "";
+
+            const search =
+                userSearch.value
+                    .trim()
+                    .toLowerCase();
+
+
+            const filtered =
+                users.filter(
+                    user =>
+                        user
+                            .toLowerCase()
+                            .includes(search)
+                );
+
+
+            const others =
+                filtered.filter(
+                    user =>
+                        user.toLowerCase() !==
+                        currentUsername.toLowerCase()
+                );
+
+
+            onlineCount.textContent =
+                users.length;
+
+
+            if (!others.length) {
+
+                onlineUsersContainer.innerHTML = `
+                    <div class="no-users">
+                        No other users online.
+                    </div>
+                `;
+
+                return;
+
+            }
+
+
+            others.forEach(
+                function (user) {
+
+                    const item =
+                        document.createElement("div");
+
+                    item.className =
+                        "online-user";
+
+                    item.dataset.username =
+                        user;
+
+
+                    const firstLetter =
+                        user
+                            .substring(0, 1)
+                            .toUpperCase();
+
+
+                    item.innerHTML = `
+
+                        <div class="user-avatar">
+
+                            ${escapeHtml(firstLetter)}
+
+                            <span class="online-dot"></span>
+
+                        </div>
+
+                        <div class="user-name">
+                            ${escapeHtml(user)}
+                        </div>
+
+                    `;
+
+
+                    item.addEventListener(
+                        "click",
+                        function () {
+
+                            selectedOnlineUser =
+                                user;
+
+                            document
+                                .querySelectorAll(
+                                    ".online-user"
+                                )
+                                .forEach(
+                                    el =>
+                                        el.style.background =
+                                            ""
+                                );
+
+                            item.style.background =
+                                "#eff6ff";
+
+                            if (
+                                window.innerWidth <=
+                                800
+                            ) {
+
+                                chatSidebar.classList.remove(
+                                    "open"
+                                );
+
+                            }
+
+                        }
+                    );
+
+
+                    onlineUsersContainer.appendChild(
+                        item
+                    );
+
+                }
+            );
+
+        }
+
+
+        /* =====================================================
+           SEARCH USERS
+           ===================================================== */
+
+        userSearch.addEventListener(
+            "input",
+            function () {
+
+                renderOnlineUsers(
+                    onlineUsers
+                );
+
+            }
+        );
+
+
+        /* =====================================================
+           SEND MESSAGE
+           ===================================================== */
+
+        async function sendMessage() {
+
+            if (isSending) {
+                return;
+            }
+
+            const message =
+                messageInput.value.trim();
+
+            if (!message) {
+                return;
+            }
+
+            if (message.length > 1000) {
+
+                alert(
+                    "Message cannot exceed 1000 characters."
+                );
+
+                return;
+
+            }
+
+
+            if (
+                connection.state !==
+                signalR.HubConnectionState.Connected
+            ) {
+
+                alert(
+                    "Chat is not connected."
+                );
+
+                return;
+
+            }
+
+
+            try {
+
+                isSending = true;
+
+                sendButton.disabled =
+                    true;
+
+                await connection.invoke(
+                    "SendMessage",
+                    message
+                );
+
+                messageInput.value =
+                    "";
+
+                autoResizeTextarea();
+
+            }
+            catch (error) {
+
+                console.error(
+                    "Send message error:",
+                    error
+                );
+
+                alert(
+                    "Unable to send message."
+                );
+
+            }
+            finally {
+
+                isSending =
+                    false;
+
+                sendButton.disabled =
+                    false;
+
+                messageInput.focus();
+
+            }
+
+        }
+
+
+        sendButton.addEventListener(
+            "click",
+            sendMessage
+        );
+
+
+        /* =====================================================
+           ENTER TO SEND
+           ===================================================== */
+
+        messageInput.addEventListener(
+            "keydown",
+            function (event) {
+
+                if (
+                    event.key === "Enter" &&
+                    !event.shiftKey
+                ) {
+
+                    event.preventDefault();
+
+                    sendMessage();
+
+                }
+
+            }
+        );
+
+
+        /* =====================================================
+           TEXTAREA AUTO RESIZE
+           ===================================================== */
+
+        function autoResizeTextarea() {
+
+            messageInput.style.height =
+                "auto";
+
+            messageInput.style.height =
+                Math.min(
+                    messageInput.scrollHeight,
+                    120
+                ) + "px";
+
+        }
+
+
+        messageInput.addEventListener(
+            "input",
+            autoResizeTextarea
+        );
+
+
+        /* =====================================================
+           LOAD EXISTING MESSAGES
+           ===================================================== */
+
+        async function loadMessages() {
+
+            try {
+
+                const response =
+                    await fetch(
+                        "/CompanyChat/Messages",
+                        {
+                            method: "GET",
+                            credentials: "same-origin"
+                        }
+                    );
+
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        "Unable to load messages."
+                    );
+
+                }
+
+
+                const messages =
+                    await response.json();
+
+
+                if (
+                    !Array.isArray(messages)
+                ) {
+
+                    return;
+
+                }
+
+
+                messages.forEach(
+                    function (item) {
+
+                        addMessage(
+                            item.id ??
+                            item.Id,
+
+                            item.username ??
+                            item.Username,
+
+                            item.message ??
+                            item.Message,
+
+                            formatMessageTime(
+                                item.sentAt ??
+                                item.SentAt
+                            )
+                        );
+
+                    }
+                );
+
+
+                scrollToBottom();
+
+            }
+            catch (error) {
+
+                console.error(
+                    "Load messages error:",
+                    error
+                );
+
+            }
+
+        }
+
+
+        /* =====================================================
+           ADD MESSAGE
+           ===================================================== */
+
+        function addMessage(
+            id,
+            username,
+            message,
+            time
+        ) {
+
+            if (
+                id !== null &&
+                id !== undefined &&
+                displayedMessageIds.has(id)
+            ) {
+
+                return;
+
+            }
+
+
+            if (
+                id !== null &&
+                id !== undefined
+            ) {
+
+                displayedMessageIds.add(id);
+
+            }
+
+
+            if (emptyChat) {
+
+                emptyChat.remove();
+
+            }
+
+
+            const messageElement =
+                document.createElement("div");
+
+
+            const isMe =
+                username.toLowerCase() ===
+                currentUsername.toLowerCase();
+
+
+            messageElement.className =
+                "message " +
+                (isMe ? "me" : "other");
+
+
+            /* ================================================
+               FILE MESSAGE
+               ================================================ */
+
+            if (
+                typeof message === "string" &&
+                message.startsWith("[FILE]|")
+            ) {
+
+                const parts =
+                    message.split("|");
+
+
+                const fileName =
+                    parts[1] ||
+                    "File";
+
+
+                const fileUrl =
+                    parts[2] ||
+                    "#";
+
+
+                const isImage =
+                    parts[3] === "True" ||
+                    parts[3] === "true";
+
+
+                let attachmentHtml =
+                    "";
+
+
+                if (isImage) {
+
+                    attachmentHtml = `
+
+                        <div class="chat-image-attachment">
+
+                            <a
+                                href="${escapeAttribute(fileUrl)}"
+                                target="_blank"
+                                rel="noopener noreferrer">
+
+                                <img
+                                    src="${escapeAttribute(fileUrl)}"
+                                    alt="${escapeAttribute(fileName)}"
+                                    class="chat-image"
+                                    loading="lazy" />
+
+                            </a>
+
+                            <div class="attachment-file-name">
+                                ${escapeHtml(fileName)}
+                            </div>
+
+                        </div>
+
+                    `;
+
+                }
+                else {
+
+                    attachmentHtml = `
+
+                        <a
+                            href="${escapeAttribute(fileUrl)}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="chat-file-attachment"
+                            download>
+
+                            <span class="file-icon">
+                                📎
+                            </span>
+
+                            <span class="file-details">
+
+                                <strong>
+                                    ${escapeHtml(fileName)}
+                                </strong>
+
+                                <small>
+                                    Click to download
+                                </small>
+
+                            </span>
+
+                        </a>
+
+                    `;
+
+                }
+
+
+                messageElement.innerHTML = `
+
+                    <div class="message-content">
+
+                        ${
+                            !isMe
+                            ? `
+                                <div class="message-username">
+                                    ${escapeHtml(username)}
+                                </div>
+                              `
+                            : ""
+                        }
+
+                        <div class="message-bubble attachment-bubble">
+
+                            ${attachmentHtml}
+
+                        </div>
+
+                        <div class="message-time">
+                            ${escapeHtml(time)}
+                        </div>
+
+                    </div>
+
+                `;
+
+            }
+
+            /* ================================================
+               NORMAL TEXT MESSAGE
+               ================================================ */
+
+            else {
+
+                const safeMessage =
+                    linkifyMessage(
+                        message
+                    );
+
+
+                messageElement.innerHTML = `
+
+                    <div class="message-content">
+
+                        ${
+                            !isMe
+                            ? `
+                                <div class="message-username">
+                                    ${escapeHtml(username)}
+                                </div>
+                              `
+                            : ""
+                        }
+
+                        <div class="message-bubble">
+                            ${safeMessage}
+                        </div>
+
+                        <div class="message-time">
+                            ${escapeHtml(time)}
+                        </div>
+
+                    </div>
+
+                `;
+
+            }
+
+
+            messagesArea.appendChild(
+                messageElement
+            );
+
+
+            scrollToBottom();
+
+        }
+
+
+        /* =====================================================
+           LINKIFY
+           ===================================================== */
+
+        function linkifyMessage(
+            text
+        ) {
+
+            const escaped =
+                escapeHtml(text);
+
+
+            const urlRegex =
+                /(https?:\/\/[^\s<]+|www\.[^\s<]+)/gi;
+
+
+            return escaped.replace(
+                urlRegex,
+                function (url) {
+
+                    let href =
+                        url;
+
+                    if (
+                        url
+                            .toLowerCase()
+                            .startsWith("www.")
+                    ) {
+
+                        href =
+                            "https://" +
+                            url;
+
+                    }
+
+
+                    return `
+                        <a
+                            href="${escapeAttribute(href)}"
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            ${url}
+                        </a>
+                    `;
+
+                }
+            );
+
+        }
+
+
+        /* =====================================================
+           ESCAPE HTML
+           ===================================================== */
+
+        function escapeHtml(
+            value
+        ) {
+
+            return String(value ?? "")
+                .replace(
+                    /&/g,
+                    "&amp;"
+                )
+                .replace(
+                    /</g,
+                    "&lt;"
+                )
+                .replace(
+                    />/g,
+                    "&gt;"
+                )
+                .replace(
+                    /"/g,
+                    "&quot;"
+                )
+                .replace(
+                    /'/g,
+                    "&#039;"
+                );
+
+        }
+
+
+        /* =====================================================
+           ESCAPE ATTRIBUTE
+           ===================================================== */
+
+        function escapeAttribute(
+            value
+        ) {
+
+            return String(value ?? "")
+                .replace(
+                    /&/g,
+                    "&amp;"
+                )
+                .replace(
+                    /"/g,
+                    "&quot;"
+                )
+                .replace(
+                    /'/g,
+                    "&#039;"
+                )
+                .replace(
+                    /</g,
+                    "&lt;"
+                )
+                .replace(
+                    />/g,
+                    "&gt;"
+                );
+
+        }
+
+
+        /* =====================================================
+           TIME
+           ===================================================== */
+
+        function formatMessageTime(
+            value
+        ) {
+
+            if (!value) {
+                return "";
+            }
+
+
+            const date =
+                new Date(value);
+
+
+            if (
+                Number.isNaN(
+                    date.getTime()
+                )
+            ) {
+
+                return String(value);
+
+            }
+
+
+            return date.toLocaleTimeString(
+                [],
+                {
+                    hour: "2-digit",
+                    minute: "2-digit"
+                }
+            );
+
+        }
+
+
+        /* =====================================================
+           SCROLL
+           ===================================================== */
+
+        function scrollToBottom() {
+
+            messagesArea.scrollTop =
+                messagesArea.scrollHeight;
+
+        }
+
+
+        /* =====================================================
+           EMOJIS
+           ===================================================== */
+
+        const emojis = [
+
+            "😀","😃","😄","😁",
+            "😆","😅","😂","🤣",
+            "😊","😇","🙂","🙃",
+            "😉","😌","😍","🥰",
+            "😘","😗","😙","😚",
+            "😋","😛","😝","😜",
+            "🤪","🤨","🧐","🤓",
+            "😎","🤩","🥳","😏",
+            "😒","😞","😔","😟",
+            "😕","🙁","☹️","😣",
+            "😖","😫","😩","🥺",
+            "😢","😭","😤","😠",
+            "😡","🤬","🤯","😳",
+            "🥵","🥶","😱","😨",
+            "😰","😥","😓","🤗",
+            "🤔","🤭","🤫","🤥",
+            "😶","😐","😑","😬",
+            "🙄","😯","😦","😧",
+            "😮","😲","🥱","😴",
+            "🤤","😪","😵","🤐",
+            "🥴","🤢","🤮","🤧",
+            "😷","🤒","🤕","🤑",
+            "🤠","👍","👎","👏",
+            "🙌","🙏","❤️","🧡",
+            "💛","💚","💙","💜",
+            "🖤","🤍","🤎","💔",
+            "🔥","✨","⭐","🎉",
+            "🎊","💯","✅","❌",
+            "💡","🚀","💪","👋"
+
+        ];
+
+
+        emojis.forEach(
+            function (emoji) {
+
+                const button =
+                    document.createElement("button");
+
+                button.type =
+                    "button";
+
+                button.className =
+                    "emoji-item";
+
+                button.textContent =
+                    emoji;
+
+                button.addEventListener(
+                    "click",
+                    function () {
+
+                        insertEmoji(
+                            emoji
+                        );
+
+                    }
+                );
+
+                emojiPicker.appendChild(
+                    button
+                );
+
+            }
+        );
+
+
+        emojiButton.addEventListener(
+            "click",
+            function (event) {
+
+                event.stopPropagation();
+
+                emojiPicker.classList.toggle(
+                    "show"
+                );
+
+            }
+        );
+
+
+        document.addEventListener(
+            "click",
+            function (event) {
+
+                if (
+                    !emojiPicker.contains(event.target) &&
+                    event.target !== emojiButton
+                ) {
+
+                    emojiPicker.classList.remove(
+                        "show"
+                    );
+
+                }
+
+            }
+        );
+
+
+        function insertEmoji(
+            emoji
+        ) {
+
+            const start =
+                messageInput.selectionStart;
+
+            const end =
+                messageInput.selectionEnd;
+
+
+            const text =
+                messageInput.value;
+
+
+            messageInput.value =
+                text.substring(
+                    0,
+                    start
+                ) +
+                emoji +
+                text.substring(
+                    end
+                );
+
+
+            messageInput.focus();
+
+
+            messageInput.selectionStart =
+                start +
+                emoji.length;
+
+            messageInput.selectionEnd =
+                start +
+                emoji.length;
+
+
+            autoResizeTextarea();
+
+        }
+
+
+        /* =====================================================
+           FILE UPLOAD
+           ===================================================== */
+
+        attachFileButton.addEventListener(
+            "click",
+            function () {
+
+                chatFileInput.click();
+
+            }
+        );
+
+
+        chatFileInput.addEventListener(
+            "change",
+            async function () {
+
+                const file =
+                    this.files[0];
+
+
+                if (!file) {
+                    return;
+                }
+
+
+                const maxSize =
+                    10 * 1024 * 1024;
+
+
+                if (
+                    file.size >
+                    maxSize
+                ) {
+
+                    alert(
+                        "File size cannot exceed 10 MB."
+                    );
+
+                    this.value =
+                        "";
+
+                    return;
+
+                }
+
+
+                const allowedExtensions = [
+
+                    ".jpg",
+                    ".jpeg",
+                    ".png",
+                    ".gif",
+                    ".webp",
+                    ".pdf",
+                    ".doc",
+                    ".docx",
+                    ".xls",
+                    ".xlsx",
+                    ".zip"
+
+                ];
+
+
+                const extension =
+                    "." +
+                    file.name
+                        .split(".")
+                        .pop()
+                        .toLowerCase();
+
+
+                if (
+                    !allowedExtensions.includes(
+                        extension
+                    )
+                ) {
+
+                    alert(
+                        "This file type is not allowed."
+                    );
+
+                    this.value =
+                        "";
+
+                    return;
+
+                }
+
+
+                try {
+
+                    attachFileButton.disabled =
+                        true;
+
+                    uploadingIndicator.classList.add(
+                        "show"
+                    );
+
+
+                    const formData =
+                        new FormData();
+
+
+                    formData.append(
+                        "file",
+                        file
+                    );
+
+
+                    const response =
+                        await fetch(
+                            "/CompanyChat/UploadFile",
+                            {
+                                method: "POST",
+                                body: formData,
+                                credentials: "same-origin"
+                            }
+                        );
+
+
+                    const result =
+                        await response.json();
+
+
+                    if (
+                        !response.ok ||
+                        !result.success
+                    ) {
+
+                        throw new Error(
+                            result.message ||
+                            "File upload failed."
+                        );
+
+                    }
+
+
+                    await connection.invoke(
+                        "SendFileMessage",
+                        result.fileName,
+                        result.fileUrl,
+                        result.isImage
+                    );
+
+
+                }
+                catch (error) {
+
+                    console.error(
+                        "Upload error:",
+                        error
+                    );
+
+                    alert(
+                        error.message ||
+                        "Unable to upload file."
+                    );
+
+                }
+                finally {
+
+                    attachFileButton.disabled =
+                        false;
+
+                    uploadingIndicator.classList.remove(
+                        "show"
+                    );
+
+                    this.value =
+                        "";
+
+                }
+
+            }
+        );
+
+
+        /* =====================================================
+           MOBILE SIDEBAR
+           ===================================================== */
+
+        mobileMenuButton.addEventListener(
+            "click",
+            function () {
+
+                chatSidebar.classList.toggle(
+                    "open"
+                );
+
+            }
+        );
+
+
+        /* =====================================================
+           SIGNALR STATUS
+           ===================================================== */
+
+        connection.onreconnecting(
+            function () {
+
+                connectionStatus.textContent =
+                    "Reconnecting...";
+
+                connectionStatus.classList.add(
+                    "visible"
+                );
+
+            }
+        );
+
+
+        connection.onreconnected(
+            function () {
+
+                connectionStatus.classList.remove(
+                    "visible"
+                );
+
+            }
+        );
+
+
+        connection.onclose(
+            function () {
+
+                connectionStatus.textContent =
+                    "Disconnected";
+
+                connectionStatus.classList.add(
+                    "visible"
+                );
+
+            }
+        );
+
+
+        /* =====================================================
+           START CHAT
+           ===================================================== */
+
+        async function startChat() {
+
+            try {
+
+                await connection.start();
+
+                connectionStatus.classList.remove(
+                    "visible"
+                );
+
+                console.log(
+                    "Company Chat connected."
+                );
+
+
+                await loadMessages();
+
+            }
+            catch (error) {
+
+                console.error(
+                    "SignalR connection failed:",
+                    error
+                );
+
+
+                connectionStatus.textContent =
+                    "Connection failed";
+
+                connectionStatus.classList.add(
+                    "visible"
+                );
+
+
+                setTimeout(
+                    startChat,
+                    5000
+                );
+
+            }
+
+        }
+
+
+        /* =====================================================
+           START
+           ===================================================== */
+
+        startChat();
+
+    </script>
+
+</body>
+</html>

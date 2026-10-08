@@ -1,0 +1,941 @@
+﻿@using techninxa.Models
+@model IEnumerable<techninxa.Models.TeamMember>
+
+@{
+    ViewData["Title"] = "Team Management";
+    ViewData["ActiveNav"] = "Team";
+}
+
+<div class="admin-page">
+
+    <!-- ==============================
+         PAGE HEADER
+         ============================== -->
+
+    <div class="admin-page-header">
+
+        <div>
+
+            <span class="admin-kicker">
+                TEAM MANAGEMENT
+            </span>
+
+            <h1>
+                Manage <em>Team.</em>
+            </h1>
+
+            <p>
+                Add, edit, remove and manage the team members
+                displayed on the Techninxa homepage.
+            </p>
+
+        </div>
+
+
+        <div class="admin-page-actions">
+
+            <a href="/Team/Create" class="admin-btn admin-btn-primary">
+                <span>+</span>
+                Add Team Member
+            </a>
+
+            <a href="/" class="admin-btn admin-btn-secondary">
+                View Website ↗
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==============================
+         SUCCESS MESSAGE
+         ============================== -->
+
+    @if (TempData["TeamSuccess"] != null)
+    {
+        <div class="admin-alert admin-alert-success">
+
+            <span>✓</span>
+
+            <div>
+                @TempData["TeamSuccess"]
+            </div>
+
+        </div>
+    }
+
+
+
+    <!-- ==============================
+         TEAM MEMBERS
+         ============================== -->
+
+    <div class="team-admin-card">
+
+        <div class="team-admin-header">
+
+            <div>
+
+                <span class="admin-kicker">
+                    TEAM MEMBERS
+                </span>
+
+                <h2>
+                    All Members
+                </h2>
+
+            </div>
+
+
+            <div class="team-count">
+
+                <strong>
+                    @Model.Count()
+                </strong>
+
+                <span>
+                    Member@(Model.Count() == 1 ? "" : "s")
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        @if (Model != null && Model.Any())
+        {
+
+            <div class="team-admin-table-wrapper">
+
+                <table class="team-admin-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                #
+                            </th>
+
+                            <th>
+                                Member
+                            </th>
+
+                            <th>
+                                Department
+                            </th>
+
+                            <th>
+                                Role
+                            </th>
+
+                            <th>
+                                Order
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                            <th>
+                                Actions
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        @foreach (var member in Model)
+                        {
+
+                            <tr>
+
+                                <!-- NUMBER -->
+
+                                <td>
+
+                                    <span class="team-table-number">
+                                        @member.Id
+                                    </span>
+
+                                </td>
+
+
+
+                                <!-- MEMBER -->
+
+                                <td>
+
+                                    <div class="team-admin-member">
+
+                                        @if (!string.IsNullOrWhiteSpace(member.Image))
+                                        {
+                                            <img src="@member.Image"
+                                                 alt="@(string.IsNullOrWhiteSpace(member.AltText) ? member.Name : member.AltText)"
+                                                 class="team-admin-avatar">
+                                        }
+                                        else
+                                        {
+                                            <div class="team-admin-avatar team-admin-avatar-empty">
+                                                @member.Name.Substring(0, 1).ToUpper()
+                                            </div>
+                                        }
+
+
+                                        <div class="team-admin-member-info">
+
+                                            <strong>
+                                                @member.Name
+                                            </strong>
+
+                                            @if (!string.IsNullOrWhiteSpace(member.AltText))
+                                            {
+                                                <small>
+                                                    @member.AltText
+                                                </small>
+                                            }
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+
+
+                                <!-- DEPARTMENT -->
+
+                                <td>
+
+                                    <span class="team-department">
+                                        @member.Department
+                                    </span>
+
+                                </td>
+
+
+
+                                <!-- ROLE -->
+
+                                <td>
+
+                                    <span class="team-role-admin">
+                                        @member.Role
+                                    </span>
+
+                                </td>
+
+
+
+                                <!-- DISPLAY ORDER -->
+
+                                <td>
+
+                                    <span class="team-order">
+                                        @member.DisplayOrder
+                                    </span>
+
+                                </td>
+
+
+
+                                <!-- STATUS -->
+
+                                <td>
+
+                                    @if (member.IsActive)
+                                    {
+                                        <span class="team-status active">
+                                            <span></span>
+                                            Active
+                                        </span>
+                                    }
+                                    else
+                                    {
+                                        <span class="team-status inactive">
+                                            <span></span>
+                                            Inactive
+                                        </span>
+                                    }
+
+                                </td>
+
+
+
+                                <!-- ACTIONS -->
+
+                                <td>
+
+                                    <div class="team-actions">
+
+                                        <!-- EDIT -->
+
+                                        <a href="/Team/Edit/@member.Id"
+                                           class="team-action edit"
+                                           title="Edit @member.Name">
+
+                                            Edit
+
+                                        </a>
+
+
+
+                                        <!-- TOGGLE -->
+
+                                        <form method="post"
+                                              action="/Team/Toggle/@member.Id"
+                                              class="team-action-form">
+
+                                            @Html.AntiForgeryToken()
+
+                                            <button type="submit"
+                                                    class="team-action toggle"
+                                                    title="@(member.IsActive ? "Deactivate" : "Activate") @member.Name">
+
+                                                @(member.IsActive ? "Disable" : "Enable")
+
+                                            </button>
+
+                                        </form>
+
+
+
+                                        <!-- DELETE -->
+
+                                        <form method="post"
+                                              action="/Team/Delete/@member.Id"
+                                              class="team-action-form"
+                                              onsubmit="return confirm('Are you sure you want to delete @member.Name? This will also remove the uploaded image.');">
+
+                                            @Html.AntiForgeryToken()
+
+                                            <button type="submit"
+                                                    class="team-action delete"
+                                                    title="Delete @member.Name">
+
+                                                Delete
+
+                                            </button>
+
+                                        </form>
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+                        }
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        }
+        else
+        {
+
+            <!-- ==============================
+                 EMPTY STATE
+                 ============================== -->
+
+            <div class="team-empty-state">
+
+                <div class="team-empty-icon">
+                    👥
+                </div>
+
+                <h3>
+                    No team members yet
+                </h3>
+
+                <p>
+                    Add your first team member to display them
+                    on the Techninxa homepage.
+                </p>
+
+                <a href="/Team/Create"
+                   class="admin-btn admin-btn-primary">
+
+                    <span>+</span>
+                    Add First Team Member
+
+                </a>
+
+            </div>
+
+        }
+
+    </div>
+
+</div>
+
+
+
+<!-- ==============================
+     PAGE CSS
+     ============================== -->
+
+<style>
+
+    .admin-page {
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 60px 30px 100px;
+    }
+
+
+    /* ==============================
+       PAGE HEADER
+       ============================== */
+
+    .admin-page-header {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 40px;
+        margin-bottom: 35px;
+    }
+
+
+    .admin-kicker {
+        display: inline-block;
+        margin-bottom: 12px;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        opacity: .55;
+    }
+
+
+    .admin-page-header h1 {
+        margin: 0;
+        font-size: clamp(38px, 5vw, 64px);
+        line-height: 1;
+        letter-spacing: -2px;
+    }
+
+
+    .admin-page-header h1 em {
+        font-style: normal;
+        font-weight: 400;
+    }
+
+
+    .admin-page-header p {
+        max-width: 650px;
+        margin: 18px 0 0;
+        line-height: 1.7;
+        opacity: .65;
+    }
+
+
+    .admin-page-actions {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-shrink: 0;
+    }
+
+
+    /* ==============================
+       BUTTONS
+       ============================== */
+
+    .admin-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        min-height: 46px;
+        padding: 0 20px;
+        border-radius: 4px;
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 600;
+        transition: all .2s ease;
+        cursor: pointer;
+    }
+
+
+    .admin-btn-primary {
+        background: #111;
+        color: #fff;
+        border: 1px solid #111;
+    }
+
+
+    .admin-btn-primary:hover {
+        background: #333;
+        color: #fff;
+        transform: translateY(-1px);
+    }
+
+
+    .admin-btn-secondary {
+        background: transparent;
+        color: inherit;
+        border: 1px solid rgba(0,0,0,.15);
+    }
+
+
+    .admin-btn-secondary:hover {
+        border-color: #111;
+    }
+
+
+    .admin-btn span {
+        font-size: 18px;
+        line-height: 1;
+    }
+
+
+
+    /* ==============================
+       ALERT
+       ============================== */
+
+    .admin-alert {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 15px 18px;
+        margin-bottom: 25px;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+
+
+    .admin-alert-success {
+        background: rgba(40, 167, 69, .08);
+        border: 1px solid rgba(40, 167, 69, .2);
+    }
+
+
+    .admin-alert-success > span {
+        width: 26px;
+        height: 26px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: rgba(40, 167, 69, .15);
+    }
+
+
+
+    /* ==============================
+       TEAM CARD
+       ============================== */
+
+    .team-admin-card {
+        border: 1px solid rgba(0,0,0,.1);
+        background: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+
+    .team-admin-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 28px 30px;
+        border-bottom: 1px solid rgba(0,0,0,.08);
+    }
+
+
+    .team-admin-header h2 {
+        margin: 0;
+        font-size: 25px;
+    }
+
+
+    .team-count {
+        display: flex;
+        align-items: baseline;
+        gap: 7px;
+    }
+
+
+    .team-count strong {
+        font-size: 28px;
+    }
+
+
+    .team-count span {
+        font-size: 12px;
+        opacity: .55;
+    }
+
+
+
+    /* ==============================
+       TABLE
+       ============================== */
+
+    .team-admin-table-wrapper {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+
+    .team-admin-table {
+        width: 100%;
+        min-width: 950px;
+        border-collapse: collapse;
+    }
+
+
+    .team-admin-table th {
+        padding: 15px 20px;
+        text-align: left;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        opacity: .5;
+        background: #fafafa;
+        border-bottom: 1px solid rgba(0,0,0,.08);
+        white-space: nowrap;
+    }
+
+
+    .team-admin-table td {
+        padding: 18px 20px;
+        border-bottom: 1px solid rgba(0,0,0,.07);
+        vertical-align: middle;
+    }
+
+
+    .team-admin-table tbody tr:last-child td {
+        border-bottom: none;
+    }
+
+
+    .team-admin-table tbody tr {
+        transition: background .2s ease;
+    }
+
+
+    .team-admin-table tbody tr:hover {
+        background: #fafafa;
+    }
+
+
+
+    /* ==============================
+       MEMBER
+       ============================== */
+
+    .team-admin-member {
+        display: flex;
+        align-items: center;
+        gap: 13px;
+        min-width: 220px;
+    }
+
+
+    .team-admin-avatar {
+        width: 52px;
+        height: 52px;
+        flex: 0 0 52px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 1px solid rgba(0,0,0,.1);
+    }
+
+
+    .team-admin-avatar-empty {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #f0f0f0;
+        font-size: 18px;
+        font-weight: 700;
+    }
+
+
+    .team-admin-member-info {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+
+    .team-admin-member-info strong {
+        font-size: 14px;
+    }
+
+
+    .team-admin-member-info small {
+        font-size: 11px;
+        opacity: .5;
+        max-width: 200px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+
+
+    /* ==============================
+       OTHER COLUMNS
+       ============================== */
+
+    .team-table-number {
+        font-size: 12px;
+        opacity: .45;
+    }
+
+
+    .team-department {
+        display: inline-block;
+        padding: 6px 9px;
+        border: 1px solid rgba(0,0,0,.12);
+        border-radius: 3px;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        white-space: nowrap;
+    }
+
+
+    .team-role-admin {
+        display: block;
+        max-width: 240px;
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+
+    .team-order {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 30px;
+        height: 30px;
+        border: 1px solid rgba(0,0,0,.12);
+        border-radius: 3px;
+        font-size: 12px;
+    }
+
+
+
+    /* ==============================
+       STATUS
+       ============================== */
+
+    .team-status {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        font-size: 11px;
+        font-weight: 600;
+        white-space: nowrap;
+    }
+
+
+    .team-status > span {
+        width: 7px;
+        height: 7px;
+        display: block;
+        border-radius: 50%;
+    }
+
+
+    .team-status.active > span {
+        background: #28a745;
+    }
+
+
+    .team-status.inactive > span {
+        background: #999;
+    }
+
+
+    .team-status.inactive {
+        opacity: .55;
+    }
+
+
+
+    /* ==============================
+       ACTIONS
+       ============================== */
+
+    .team-actions {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        white-space: nowrap;
+    }
+
+
+    .team-action {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 32px;
+        padding: 0 10px;
+        border-radius: 3px;
+        border: 1px solid rgba(0,0,0,.12);
+        background: transparent;
+        color: inherit;
+        font-family: inherit;
+        font-size: 11px;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all .2s ease;
+    }
+
+
+    .team-action:hover {
+        border-color: #111;
+    }
+
+
+    .team-action.edit:hover {
+        background: #111;
+        color: #fff;
+    }
+
+
+    .team-action.toggle:hover {
+        background: #f3f3f3;
+    }
+
+
+    .team-action.delete {
+        color: #c62828;
+        border-color: rgba(198,40,40,.2);
+    }
+
+
+    .team-action.delete:hover {
+        background: #c62828;
+        border-color: #c62828;
+        color: #fff;
+    }
+
+
+    .team-action-form {
+        margin: 0;
+        padding: 0;
+    }
+
+
+
+    /* ==============================
+       EMPTY STATE
+       ============================== */
+
+    .team-empty-state {
+        padding: 80px 30px;
+        text-align: center;
+    }
+
+
+    .team-empty-icon {
+        width: 65px;
+        height: 65px;
+        margin: 0 auto 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: #f5f5f5;
+        font-size: 28px;
+    }
+
+
+    .team-empty-state h3 {
+        margin: 0 0 10px;
+        font-size: 22px;
+    }
+
+
+    .team-empty-state p {
+        max-width: 450px;
+        margin: 0 auto 25px;
+        line-height: 1.7;
+        font-size: 14px;
+        opacity: .6;
+    }
+
+
+
+    /* ==============================
+       MOBILE
+       ============================== */
+
+    @@media (max-width: 900px) {
+
+        .admin-page {
+            padding: 40px 18px 70px;
+        }
+
+
+        .admin-page-header {
+            align-items: flex-start;
+            flex-direction: column;
+        }
+
+
+        .admin-page-actions {
+            width: 100%;
+            flex-wrap: wrap;
+        }
+
+
+        .admin-page-actions .admin-btn {
+            flex: 1;
+        }
+
+
+        .team-admin-header {
+            padding: 22px 18px;
+        }
+
+    }
+
+
+    @@media (max-width: 600px) {
+
+        .admin-page-header h1 {
+            letter-spacing: -1px;
+        }
+
+
+        .admin-page-actions {
+            flex-direction: column;
+        }
+
+
+        .admin-page-actions .admin-btn {
+            width: 100%;
+            flex: none;
+        }
+
+
+        .team-admin-header {
+            align-items: flex-start;
+            gap: 15px;
+            flex-direction: column;
+        }
+
+    }
+
+</style>
+
