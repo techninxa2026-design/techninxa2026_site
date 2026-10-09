@@ -1252,7 +1252,7 @@ namespace techninxa.Controllers
 
             return View(model);
         }
-        
+
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -1372,7 +1372,7 @@ namespace techninxa.Controllers
             return RedirectToAction("Dashboard");
         }
 
-        
+
         // ==============================
         // LOGOUT
         // ==============================
@@ -1517,7 +1517,7 @@ namespace techninxa.Controllers
                     Directory.GetCurrentDirectory(),
                     "wwwroot",
                     "uploads",
-                    "team");
+                    "teams");
 
                 Directory.CreateDirectory(folder);
 
@@ -1665,7 +1665,7 @@ namespace techninxa.Controllers
                     Directory.GetCurrentDirectory(),
                     "wwwroot",
                     "uploads",
-                    "team");
+                    "teams");
 
                 Directory.CreateDirectory(folder);
 

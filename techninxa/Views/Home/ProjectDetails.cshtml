@@ -2,11 +2,16 @@
 @model Project
 
 @{
-    ViewData["Title"] = Model.Title;
+    ViewData["Title"] = $"{Model.Title} | {Model.Category} Project Case Study";
     ViewData["ActiveNav"] = "Projects";
+
     ViewData["Description"] =
-        Model.ShortDescription ??
-        $"{Model.Title} — Techninxa project case study.";
+        !string.IsNullOrWhiteSpace(Model.ShortDescription)
+            ? Model.ShortDescription
+            : $"{Model.Title} is a {Model.Category} project developed by Techninxa.";
+
+    ViewData["CanonicalUrl"] =
+        $"https://techninxa.com/Projects/Details/{Model.Slug}";
 
     var imageMedia = Model.Media
         .Where(m => m.MediaType == "image")
@@ -22,6 +27,8 @@
         ? Model.ShortDescription
         : Model.Overview;
 }
+
+
 
 <section class="project-details-page">
 

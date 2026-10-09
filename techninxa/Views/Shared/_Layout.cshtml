@@ -1,15 +1,51 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="@(ViewData["Description"] ?? "Techninxa — modern software, mobile, web and IoT solutions.")">
-    <title>@ViewData["Title"] — Techninxa</title>
-    <link rel="favicon" href="~/assets/techninxa-logo.png">
+
+    @{
+        var pageTitle = ViewData["Title"] as string
+                        ?? "Custom Software & Web Development";
+
+        var pageDescription = ViewData["Description"] as string
+            ?? "Techninxa develops custom software, web applications, mobile apps, and IoT solutions for businesses.";
+
+        var canonicalUrl = ViewData["CanonicalUrl"] as string
+            ?? "https://techninxa.com/";
+    }
+
+    <title>@pageTitle | Techninxa</title>
+
+    <meta name="description" content="@pageDescription">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="@canonicalUrl">
+
+    <!-- Social media preview -->
+    <meta property="og:site_name" content="Techninxa">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="@pageTitle | Techninxa">
+    <meta property="og:description" content="@pageDescription">
+    <meta property="og:url" content="@canonicalUrl">
+    <meta property="og:image"
+          content="https://techninxa.com/assets/techninxa-logo.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png"
+          href="~/assets/techninxa-logo.png">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Main stylesheet -->
     <link rel="stylesheet" href="~/css/style.css">
+
     @await RenderSectionAsync("Styles", required: false)
 </head>
 <body>

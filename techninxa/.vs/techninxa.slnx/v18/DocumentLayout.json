@@ -1,149 +1,157 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\techninxa\\",
+  "WorkspaceRootPath": "D:\\techninxa2026_site\\techninxa\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa2026_site\\techninxa\\wwwroot\\sitemap.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:wwwroot\\sitemap.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa\\techninxa.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:techninxa.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa2026_site\\techninxa\\wwwroot\\robots.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:wwwroot\\robots.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa2026_site\\techninxa\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa\\controllers\\companychatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:controllers\\companychatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa\\views\\home\\companychatlogin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:views\\home\\companychatlogin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa\\models\\companychathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:models\\companychathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa\\wwwroot\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:wwwroot\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa\\views\\home\\editteam.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:views\\home\\editteam.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa\\views\\home\\team.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:views\\home\\team.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa\\views\\home\\createteam.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:views\\home\\createteam.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa\\models\\teammember.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:models\\teammember.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa\\views\\home\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:views\\home\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa\\views\\home\\projects.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:views\\home\\projects.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa\\views\\shared\\_layout.cshtml.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:views\\shared\\_layout.cshtml.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa\\models\\companychatloginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:models\\companychatloginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa\\models\\chatmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:models\\chatmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa\\views\\home\\clientmesseges.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:views\\home\\clientmesseges.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa\\models\\contactmesseges.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:models\\contactmesseges.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa\\models\\project.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:models\\project.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa\\models\\weekday.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:models\\weekday.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa\\views\\home\\makeaschedule.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:views\\home\\makeaschedule.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa\\models\\timeslot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:models\\timeslot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa\\models\\meeting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:models\\meeting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa\\views\\home\\addprojects.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:views\\home\\addprojects.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa\\views\\home\\projectdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa2026_site\\techninxa\\views\\home\\projectdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:views\\home\\projectdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa\\models\\projectfeature.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa2026_site\\techninxa\\views\\home\\projects.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:views\\home\\projects.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa2026_site\\techninxa\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa2026_site\\techninxa\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa2026_site\\techninxa\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa2026_site\\techninxa\\techninxa.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:techninxa.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa2026_site\\techninxa\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa2026_site\\techninxa\\controllers\\companychatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:controllers\\companychatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa2026_site\\techninxa\\views\\home\\companychatlogin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:views\\home\\companychatlogin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa2026_site\\techninxa\\models\\companychathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:models\\companychathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa2026_site\\techninxa\\wwwroot\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:wwwroot\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa2026_site\\techninxa\\views\\home\\editteam.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:views\\home\\editteam.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa2026_site\\techninxa\\views\\home\\team.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:views\\home\\team.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa2026_site\\techninxa\\views\\home\\createteam.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:views\\home\\createteam.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa2026_site\\techninxa\\models\\teammember.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:models\\teammember.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa2026_site\\techninxa\\views\\home\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:views\\home\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa2026_site\\techninxa\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa2026_site\\techninxa\\views\\shared\\_layout.cshtml.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:views\\shared\\_layout.cshtml.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa2026_site\\techninxa\\models\\companychatloginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:models\\companychatloginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa2026_site\\techninxa\\models\\chatmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:models\\chatmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa2026_site\\techninxa\\views\\home\\clientmesseges.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:views\\home\\clientmesseges.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa2026_site\\techninxa\\models\\contactmesseges.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:models\\contactmesseges.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa2026_site\\techninxa\\models\\project.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:models\\project.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa2026_site\\techninxa\\models\\weekday.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:models\\weekday.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa2026_site\\techninxa\\views\\home\\makeaschedule.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:views\\home\\makeaschedule.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa2026_site\\techninxa\\models\\timeslot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:models\\timeslot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa2026_site\\techninxa\\models\\meeting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:models\\meeting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa2026_site\\techninxa\\views\\home\\addprojects.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:views\\home\\addprojects.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa2026_site\\techninxa\\models\\projectfeature.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:models\\projectfeature.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa\\models\\projectmedia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa2026_site\\techninxa\\models\\projectmedia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:models\\projectmedia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa\\models\\projectcreateviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa2026_site\\techninxa\\models\\projectcreateviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:models\\projectcreateviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa\\models\\projecttechnology.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa2026_site\\techninxa\\models\\projecttechnology.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:models\\projecttechnology.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa\\views\\home\\adminaccess.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa2026_site\\techninxa\\views\\home\\adminaccess.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:views\\home\\adminaccess.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa\\models\\adminuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa2026_site\\techninxa\\models\\adminuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:models\\adminuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa\\dto\\contactdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa2026_site\\techninxa\\dto\\contactdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:dto\\contactdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -154,79 +162,106 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
+              "Title": "sitemap.xml",
+              "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\wwwroot\\sitemap.xml",
+              "RelativeDocumentMoniker": "wwwroot\\sitemap.xml",
+              "ToolTip": "D:\\techninxa2026_site\\techninxa\\wwwroot\\sitemap.xml",
+              "RelativeToolTip": "wwwroot\\sitemap.xml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2026-10-09T04:34:17.125Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "robots.txt",
+              "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\wwwroot\\robots.txt",
+              "RelativeDocumentMoniker": "wwwroot\\robots.txt",
+              "ToolTip": "D:\\techninxa2026_site\\techninxa\\wwwroot\\robots.txt",
+              "RelativeToolTip": "wwwroot\\robots.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-10-09T04:31:47.598Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "HomeController.cs",
-              "DocumentMoniker": "D:\\techninxa\\Controllers\\HomeController.cs",
+              "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
-              "ToolTip": "D:\\techninxa\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\techninxa2026_site\\techninxa\\Controllers\\HomeController.cs",
               "RelativeToolTip": "Controllers\\HomeController.cs",
-              "ViewState": "AgIAAGsGAAAAAAAAAAAswJUGAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJgGAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-08T18:13:52.352Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\techninxa\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\techninxa\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAUwBIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-08T17:21:48.007Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\techninxa\\Views\\Shared\\_Layout.cshtml",
+              "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\techninxa\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\techninxa2026_site\\techninxa\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAEwCMAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAACQAAAAAAAAAAAAUwDUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-09-25T02:53:36.157Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "CompanyChatHub.cs",
-              "DocumentMoniker": "D:\\techninxa\\Models\\CompanyChatHub.cs",
-              "RelativeDocumentMoniker": "Models\\CompanyChatHub.cs",
-              "ToolTip": "D:\\techninxa\\Models\\CompanyChatHub.cs",
-              "RelativeToolTip": "Models\\CompanyChatHub.cs",
-              "ViewState": "AgIAALAAAAAAAAAAAAAIwLUAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-01T11:52:43.447Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\techninxa\\Views\\Home\\Index.cshtml",
+              "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
-              "ToolTip": "D:\\techninxa\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\techninxa2026_site\\techninxa\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAIEAAAAAAAAAAAuwAoEAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAF0EAAAAAAAAAAAUwHMEAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-09-25T02:47:55.667Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
+              "Title": "Projects.cshtml",
+              "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Views\\Home\\Projects.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Projects.cshtml",
+              "ToolTip": "D:\\techninxa2026_site\\techninxa\\Views\\Home\\Projects.cshtml",
+              "RelativeToolTip": "Views\\Home\\Projects.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-25T03:08:23.052Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProjectDetails.cshtml",
+              "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Views\\Home\\ProjectDetails.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\ProjectDetails.cshtml",
+              "ToolTip": "D:\\techninxa2026_site\\techninxa\\Views\\Home\\ProjectDetails.cshtml",
+              "RelativeToolTip": "Views\\Home\\ProjectDetails.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-25T15:07:56.877Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "techninxa.csproj",
-              "DocumentMoniker": "D:\\techninxa\\techninxa.csproj",
+              "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\techninxa.csproj",
               "RelativeDocumentMoniker": "techninxa.csproj",
-              "ToolTip": "D:\\techninxa\\techninxa.csproj",
+              "ToolTip": "D:\\techninxa2026_site\\techninxa\\techninxa.csproj",
               "RelativeToolTip": "techninxa.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
@@ -235,11 +270,35 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 12,
+              "Title": "CompanyChatHub.cs",
+              "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Models\\CompanyChatHub.cs",
+              "RelativeDocumentMoniker": "Models\\CompanyChatHub.cs",
+              "ToolTip": "D:\\techninxa2026_site\\techninxa\\Models\\CompanyChatHub.cs",
+              "RelativeToolTip": "Models\\CompanyChatHub.cs",
+              "ViewState": "AgIAALAAAAAAAAAAAAAIwLUAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-01T11:52:43.447Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\techninxa2026_site\\techninxa\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAUwBIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-08T17:21:48.007Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "CompanyChatController.cs",
-              "DocumentMoniker": "D:\\techninxa\\Controllers\\CompanyChatController.cs",
+              "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Controllers\\CompanyChatController.cs",
               "RelativeDocumentMoniker": "Controllers\\CompanyChatController.cs",
-              "ToolTip": "D:\\techninxa\\Controllers\\CompanyChatController.cs",
+              "ToolTip": "D:\\techninxa2026_site\\techninxa\\Controllers\\CompanyChatController.cs",
               "RelativeToolTip": "Controllers\\CompanyChatController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -247,11 +306,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\techninxa\\appsettings.json",
+              "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "D:\\techninxa\\appsettings.json",
+              "ToolTip": "D:\\techninxa2026_site\\techninxa\\appsettings.json",
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
@@ -259,11 +318,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 11,
               "Title": "CompanyChatLogin.cshtml",
-              "DocumentMoniker": "D:\\techninxa\\Views\\Home\\CompanyChatLogin.cshtml",
+              "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Views\\Home\\CompanyChatLogin.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\CompanyChatLogin.cshtml",
-              "ToolTip": "D:\\techninxa\\Views\\Home\\CompanyChatLogin.cshtml",
+              "ToolTip": "D:\\techninxa2026_site\\techninxa\\Views\\Home\\CompanyChatLogin.cshtml",
               "RelativeToolTip": "Views\\Home\\CompanyChatLogin.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -271,11 +330,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 13,
               "Title": "style.css",
-              "DocumentMoniker": "D:\\techninxa\\wwwroot\\css\\style.css",
+              "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\wwwroot\\css\\style.css",
               "RelativeDocumentMoniker": "wwwroot\\css\\style.css",
-              "ToolTip": "D:\\techninxa\\wwwroot\\css\\style.css",
+              "ToolTip": "D:\\techninxa2026_site\\techninxa\\wwwroot\\css\\style.css",
               "RelativeToolTip": "wwwroot\\css\\style.css",
               "ViewState": "AgIAAAIEAAAAAAAAAAAEwBYEAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
@@ -283,11 +342,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 14,
               "Title": "EditTeam.cshtml",
-              "DocumentMoniker": "D:\\techninxa\\Views\\Home\\EditTeam.cshtml",
+              "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Views\\Home\\EditTeam.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\EditTeam.cshtml",
-              "ToolTip": "D:\\techninxa\\Views\\Home\\EditTeam.cshtml",
+              "ToolTip": "D:\\techninxa2026_site\\techninxa\\Views\\Home\\EditTeam.cshtml",
               "RelativeToolTip": "Views\\Home\\EditTeam.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -295,11 +354,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 15,
               "Title": "Team.cshtml",
-              "DocumentMoniker": "D:\\techninxa\\Views\\Home\\Team.cshtml",
+              "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Views\\Home\\Team.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Team.cshtml",
-              "ToolTip": "D:\\techninxa\\Views\\Home\\Team.cshtml",
+              "ToolTip": "D:\\techninxa2026_site\\techninxa\\Views\\Home\\Team.cshtml",
               "RelativeToolTip": "Views\\Home\\Team.cshtml",
               "ViewState": "AgIAACoCAAAAAAAAAAAAAC8CAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -307,11 +366,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 16,
               "Title": "CreateTeam.cshtml",
-              "DocumentMoniker": "D:\\techninxa\\Views\\Home\\CreateTeam.cshtml",
+              "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Views\\Home\\CreateTeam.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\CreateTeam.cshtml",
-              "ToolTip": "D:\\techninxa\\Views\\Home\\CreateTeam.cshtml",
+              "ToolTip": "D:\\techninxa2026_site\\techninxa\\Views\\Home\\CreateTeam.cshtml",
               "RelativeToolTip": "Views\\Home\\CreateTeam.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -319,11 +378,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 17,
               "Title": "TeamMember.cs",
-              "DocumentMoniker": "D:\\techninxa\\Models\\TeamMember.cs",
+              "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Models\\TeamMember.cs",
               "RelativeDocumentMoniker": "Models\\TeamMember.cs",
-              "ToolTip": "D:\\techninxa\\Models\\TeamMember.cs",
+              "ToolTip": "D:\\techninxa2026_site\\techninxa\\Models\\TeamMember.cs",
               "RelativeToolTip": "Models\\TeamMember.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -331,11 +390,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 18,
               "Title": "Dashboard.cshtml",
-              "DocumentMoniker": "D:\\techninxa\\Views\\Home\\Dashboard.cshtml",
+              "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Views\\Home\\Dashboard.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Dashboard.cshtml",
-              "ToolTip": "D:\\techninxa\\Views\\Home\\Dashboard.cshtml",
+              "ToolTip": "D:\\techninxa2026_site\\techninxa\\Views\\Home\\Dashboard.cshtml",
               "RelativeToolTip": "Views\\Home\\Dashboard.cshtml",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAABkAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -343,11 +402,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 19,
               "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "D:\\techninxa\\ApplicationDbContext.cs",
+              "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "ApplicationDbContext.cs",
-              "ToolTip": "D:\\techninxa\\ApplicationDbContext.cs",
+              "ToolTip": "D:\\techninxa2026_site\\techninxa\\ApplicationDbContext.cs",
               "RelativeToolTip": "ApplicationDbContext.cs",
               "ViewState": "AgIAADwAAAAAAAAAAAAYwEMAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -355,11 +414,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 20,
               "Title": "_Layout.cshtml.css",
-              "DocumentMoniker": "D:\\techninxa\\Views\\Shared\\_Layout.cshtml.css",
+              "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Views\\Shared\\_Layout.cshtml.css",
               "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml.css",
-              "ToolTip": "D:\\techninxa\\Views\\Shared\\_Layout.cshtml.css",
+              "ToolTip": "D:\\techninxa2026_site\\techninxa\\Views\\Shared\\_Layout.cshtml.css",
               "RelativeToolTip": "Views\\Shared\\_Layout.cshtml.css",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
@@ -367,23 +426,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Projects.cshtml",
-              "DocumentMoniker": "D:\\techninxa\\Views\\Home\\Projects.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\Projects.cshtml",
-              "ToolTip": "D:\\techninxa\\Views\\Home\\Projects.cshtml",
-              "RelativeToolTip": "Views\\Home\\Projects.cshtml",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAHUAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-25T03:08:23.052Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 21,
               "Title": "CompanyChatLoginViewModel.cs",
-              "DocumentMoniker": "D:\\techninxa\\Models\\CompanyChatLoginViewModel.cs",
+              "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Models\\CompanyChatLoginViewModel.cs",
               "RelativeDocumentMoniker": "Models\\CompanyChatLoginViewModel.cs",
-              "ToolTip": "D:\\techninxa\\Models\\CompanyChatLoginViewModel.cs",
+              "ToolTip": "D:\\techninxa2026_site\\techninxa\\Models\\CompanyChatLoginViewModel.cs",
               "RelativeToolTip": "Models\\CompanyChatLoginViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -391,11 +438,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 22,
               "Title": "Chatmessage.cs",
-              "DocumentMoniker": "D:\\techninxa\\Models\\Chatmessage.cs",
+              "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Models\\Chatmessage.cs",
               "RelativeDocumentMoniker": "Models\\Chatmessage.cs",
-              "ToolTip": "D:\\techninxa\\Models\\Chatmessage.cs",
+              "ToolTip": "D:\\techninxa2026_site\\techninxa\\Models\\Chatmessage.cs",
               "RelativeToolTip": "Models\\Chatmessage.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -403,11 +450,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 23,
               "Title": "ClientMesseges.cshtml",
-              "DocumentMoniker": "D:\\techninxa\\Views\\Home\\ClientMesseges.cshtml",
+              "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Views\\Home\\ClientMesseges.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\ClientMesseges.cshtml",
-              "ToolTip": "D:\\techninxa\\Views\\Home\\ClientMesseges.cshtml",
+              "ToolTip": "D:\\techninxa2026_site\\techninxa\\Views\\Home\\ClientMesseges.cshtml",
               "RelativeToolTip": "Views\\Home\\ClientMesseges.cshtml",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAA8AAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -415,11 +462,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 24,
               "Title": "ContactMesseges.cs",
-              "DocumentMoniker": "D:\\techninxa\\Models\\ContactMesseges.cs",
+              "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Models\\ContactMesseges.cs",
               "RelativeDocumentMoniker": "Models\\ContactMesseges.cs",
-              "ToolTip": "D:\\techninxa\\Models\\ContactMesseges.cs",
+              "ToolTip": "D:\\techninxa2026_site\\techninxa\\Models\\ContactMesseges.cs",
               "RelativeToolTip": "Models\\ContactMesseges.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -427,11 +474,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 25,
               "Title": "Project.cs",
-              "DocumentMoniker": "D:\\techninxa\\Models\\Project.cs",
+              "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Models\\Project.cs",
               "RelativeDocumentMoniker": "Models\\Project.cs",
-              "ToolTip": "D:\\techninxa\\Models\\Project.cs",
+              "ToolTip": "D:\\techninxa2026_site\\techninxa\\Models\\Project.cs",
               "RelativeToolTip": "Models\\Project.cs",
               "ViewState": "AgIAADIAAAAAAAAAAAAcwD4AAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -439,11 +486,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 26,
               "Title": "Weekday.cs",
-              "DocumentMoniker": "D:\\techninxa\\Models\\Weekday.cs",
+              "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Models\\Weekday.cs",
               "RelativeDocumentMoniker": "Models\\Weekday.cs",
-              "ToolTip": "D:\\techninxa\\Models\\Weekday.cs",
+              "ToolTip": "D:\\techninxa2026_site\\techninxa\\Models\\Weekday.cs",
               "RelativeToolTip": "Models\\Weekday.cs",
               "ViewState": "AgIAACEAAAAAAAAAAAAAAAgAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -451,11 +498,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 28,
               "Title": "Timeslot.cs",
-              "DocumentMoniker": "D:\\techninxa\\Models\\Timeslot.cs",
+              "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Models\\Timeslot.cs",
               "RelativeDocumentMoniker": "Models\\Timeslot.cs",
-              "ToolTip": "D:\\techninxa\\Models\\Timeslot.cs",
+              "ToolTip": "D:\\techninxa2026_site\\techninxa\\Models\\Timeslot.cs",
               "RelativeToolTip": "Models\\Timeslot.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -463,11 +510,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 27,
               "Title": "MakeASchedule.cshtml",
-              "DocumentMoniker": "D:\\techninxa\\Views\\Home\\MakeASchedule.cshtml",
+              "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Views\\Home\\MakeASchedule.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\MakeASchedule.cshtml",
-              "ToolTip": "D:\\techninxa\\Views\\Home\\MakeASchedule.cshtml",
+              "ToolTip": "D:\\techninxa2026_site\\techninxa\\Views\\Home\\MakeASchedule.cshtml",
               "RelativeToolTip": "Views\\Home\\MakeASchedule.cshtml",
               "ViewState": "AgIAAPcFAAAAAAAAAIAwwA0GAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -475,11 +522,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 29,
               "Title": "Meeting.cs",
-              "DocumentMoniker": "D:\\techninxa\\Models\\Meeting.cs",
+              "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Models\\Meeting.cs",
               "RelativeDocumentMoniker": "Models\\Meeting.cs",
-              "ToolTip": "D:\\techninxa\\Models\\Meeting.cs",
+              "ToolTip": "D:\\techninxa2026_site\\techninxa\\Models\\Meeting.cs",
               "RelativeToolTip": "Models\\Meeting.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -487,11 +534,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 30,
               "Title": "AddProjects.cshtml",
-              "DocumentMoniker": "D:\\techninxa\\Views\\Home\\AddProjects.cshtml",
+              "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Views\\Home\\AddProjects.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\AddProjects.cshtml",
-              "ToolTip": "D:\\techninxa\\Views\\Home\\AddProjects.cshtml",
+              "ToolTip": "D:\\techninxa2026_site\\techninxa\\Views\\Home\\AddProjects.cshtml",
               "RelativeToolTip": "Views\\Home\\AddProjects.cshtml",
               "ViewState": "AgIAAAwAAAAAAAAAAAAtwBEAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -499,23 +546,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "ProjectDetails.cshtml",
-              "DocumentMoniker": "D:\\techninxa\\Views\\Home\\ProjectDetails.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\ProjectDetails.cshtml",
-              "ToolTip": "D:\\techninxa\\Views\\Home\\ProjectDetails.cshtml",
-              "RelativeToolTip": "Views\\Home\\ProjectDetails.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAMcBAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-25T15:07:56.877Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 31,
               "Title": "ProjectFeature.cs",
-              "DocumentMoniker": "D:\\techninxa\\Models\\ProjectFeature.cs",
+              "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Models\\ProjectFeature.cs",
               "RelativeDocumentMoniker": "Models\\ProjectFeature.cs",
-              "ToolTip": "D:\\techninxa\\Models\\ProjectFeature.cs",
+              "ToolTip": "D:\\techninxa2026_site\\techninxa\\Models\\ProjectFeature.cs",
               "RelativeToolTip": "Models\\ProjectFeature.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAkwBEAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -523,11 +558,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 32,
               "Title": "ProjectMedia.cs",
-              "DocumentMoniker": "D:\\techninxa\\Models\\ProjectMedia.cs",
+              "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Models\\ProjectMedia.cs",
               "RelativeDocumentMoniker": "Models\\ProjectMedia.cs",
-              "ToolTip": "D:\\techninxa\\Models\\ProjectMedia.cs",
+              "ToolTip": "D:\\techninxa2026_site\\techninxa\\Models\\ProjectMedia.cs",
               "RelativeToolTip": "Models\\ProjectMedia.cs",
               "ViewState": "AgIAAB0AAAAAAAAAAAAgwCIAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -535,11 +570,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 33,
               "Title": "ProjectCreateViewModel.cs",
-              "DocumentMoniker": "D:\\techninxa\\Models\\ProjectCreateViewModel.cs",
+              "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Models\\ProjectCreateViewModel.cs",
               "RelativeDocumentMoniker": "Models\\ProjectCreateViewModel.cs",
-              "ToolTip": "D:\\techninxa\\Models\\ProjectCreateViewModel.cs",
+              "ToolTip": "D:\\techninxa2026_site\\techninxa\\Models\\ProjectCreateViewModel.cs",
               "RelativeToolTip": "Models\\ProjectCreateViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAFcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -547,11 +582,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 34,
               "Title": "ProjectTechnology.cs",
-              "DocumentMoniker": "D:\\techninxa\\Models\\ProjectTechnology.cs",
+              "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Models\\ProjectTechnology.cs",
               "RelativeDocumentMoniker": "Models\\ProjectTechnology.cs",
-              "ToolTip": "D:\\techninxa\\Models\\ProjectTechnology.cs",
+              "ToolTip": "D:\\techninxa2026_site\\techninxa\\Models\\ProjectTechnology.cs",
               "RelativeToolTip": "Models\\ProjectTechnology.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -559,11 +594,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 35,
               "Title": "AdminAccess.cshtml",
-              "DocumentMoniker": "D:\\techninxa\\Views\\Home\\AdminAccess.cshtml",
+              "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Views\\Home\\AdminAccess.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\AdminAccess.cshtml",
-              "ToolTip": "D:\\techninxa\\Views\\Home\\AdminAccess.cshtml",
+              "ToolTip": "D:\\techninxa2026_site\\techninxa\\Views\\Home\\AdminAccess.cshtml",
               "RelativeToolTip": "Views\\Home\\AdminAccess.cshtml",
               "ViewState": "AgIAAAgAAAAAAAAAAAAuwBAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -571,11 +606,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 36,
               "Title": "AdminUser.cs",
-              "DocumentMoniker": "D:\\techninxa\\Models\\AdminUser.cs",
+              "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Models\\AdminUser.cs",
               "RelativeDocumentMoniker": "Models\\AdminUser.cs",
-              "ToolTip": "D:\\techninxa\\Models\\AdminUser.cs",
+              "ToolTip": "D:\\techninxa2026_site\\techninxa\\Models\\AdminUser.cs",
               "RelativeToolTip": "Models\\AdminUser.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAAwA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -583,11 +618,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 37,
               "Title": "ContactDTO.cs",
-              "DocumentMoniker": "D:\\techninxa\\DTO\\ContactDTO.cs",
+              "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\DTO\\ContactDTO.cs",
               "RelativeDocumentMoniker": "DTO\\ContactDTO.cs",
-              "ToolTip": "D:\\techninxa\\DTO\\ContactDTO.cs",
+              "ToolTip": "D:\\techninxa2026_site\\techninxa\\DTO\\ContactDTO.cs",
               "RelativeToolTip": "DTO\\ContactDTO.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAmwAsAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

@@ -3849,11 +3849,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\techninxa\\techninxa.csproj",
+      "projectUniqueName": "D:\\techninxa2026_site\\techninxa\\techninxa.csproj",
       "projectName": "techninxa",
-      "projectPath": "D:\\techninxa\\techninxa.csproj",
+      "projectPath": "D:\\techninxa2026_site\\techninxa\\techninxa.csproj",
       "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "D:\\techninxa\\obj\\",
+      "outputPath": "D:\\techninxa2026_site\\techninxa\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
