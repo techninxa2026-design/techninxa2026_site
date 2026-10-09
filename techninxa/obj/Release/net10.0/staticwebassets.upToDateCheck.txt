@@ -68,6 +68,7 @@ wwwroot\lib\jquery\dist\jquery.slim.js
 wwwroot\lib\jquery\dist\jquery.slim.min.js
 wwwroot\lib\jquery\dist\jquery.slim.min.map
 wwwroot\lib\jquery\LICENSE.txt
+wwwroot\robots.txt
 wwwroot\uploads\chat\068654fd5cc141aa99077c6b1dca3c00.png
 wwwroot\uploads\chat\22acf4fd95504570912a3c963f2a5b1f.png
 wwwroot\uploads\chat\4f530f6a79284201be6ab9043e9f12a0.png
@@ -94,6 +95,7 @@ wwwroot\uploads\teams\39c55c39d7f94e95bcae74b4ddc09c64.jpeg
 wwwroot\uploads\teams\4c82417acc9f4848857872e436ca73bc.jpg
 wwwroot\uploads\teams\af01228e82f84efc91f67ec2c0fdea31.png
 wwwroot\uploads\teams\cf19d4ac58ff4689a255f420149d4eb1.jpg
+wwwroot\sitemap.xml
 D:\techninxa2026_site\techninxa\wwwroot\css\admin-add-project.css
 D:\techninxa2026_site\techninxa\wwwroot\css\project-view.css
 D:\techninxa2026_site\techninxa\wwwroot\css\style.css
@@ -158,3 +160,5 @@ D:\techninxa2026_site\techninxa\wwwroot\lib\jquery\dist\jquery.slim.js
 D:\techninxa2026_site\techninxa\wwwroot\lib\jquery\dist\jquery.slim.min.js
 D:\techninxa2026_site\techninxa\wwwroot\lib\jquery\dist\jquery.slim.min.map
 D:\techninxa2026_site\techninxa\wwwroot\lib\jquery\LICENSE.txt
+D:\techninxa2026_site\techninxa\wwwroot\robots.txt
+D:\techninxa2026_site\techninxa\wwwroot\sitemap.xml

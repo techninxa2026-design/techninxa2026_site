@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("techninxa")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f7a28f7e505341ec23a4df05aa0304b1c6de8443")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a902a319b4ccc140c845f9537a1f3e7905a3d30d")]
 [assembly: System.Reflection.AssemblyProductAttribute("techninxa")]
 [assembly: System.Reflection.AssemblyTitleAttribute("techninxa")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

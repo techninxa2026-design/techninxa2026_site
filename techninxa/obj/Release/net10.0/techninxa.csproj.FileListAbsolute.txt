@@ -571,3 +571,5 @@ D:\techninxa2026_site\techninxa\obj\Release\net10.0\refint\techninxa.dll
 D:\techninxa2026_site\techninxa\obj\Release\net10.0\techninxa.pdb
 D:\techninxa2026_site\techninxa\obj\Release\net10.0\techninxa.genruntimeconfig.cache
 D:\techninxa2026_site\techninxa\obj\Release\net10.0\ref\techninxa.dll
+D:\techninxa2026_site\techninxa\obj\Release\net10.0\compressed\k7d4xm0wrf-{0}-75eh6gfkxj-75eh6gfkxj.gz
+D:\techninxa2026_site\techninxa\obj\Release\net10.0\compressed\avpq4gco19-{0}-umpm2exvrq-umpm2exvrq.gz

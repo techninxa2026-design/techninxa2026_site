@@ -1,3 +1,4 @@
+
 name: Deploy Techninxa
 
 on:
@@ -19,13 +20,13 @@ jobs:
           dotnet-version: '10.0.x'
 
       - name: Restore
-        run: dotnet restore
+        run: dotnet restore techninxa/techninxa.csproj
 
       - name: Build
-        run: dotnet build --configuration Release --no-restore
+        run: dotnet build techninxa/techninxa.csproj --configuration Release --no-restore
 
       - name: Publish
-        run: dotnet publish --configuration Release --output ./publish --no-build
+        run: dotnet publish techninxa/techninxa.csproj --configuration Release --output ./publish --no-build
 
       - name: Deploy to SolidCP
         uses: SamKirkland/FTP-Deploy-Action@v4.4.0
