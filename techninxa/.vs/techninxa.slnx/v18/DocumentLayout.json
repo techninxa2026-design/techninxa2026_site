@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "D:\\techninxa2026_site\\techninxa\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa2026_site\\techninxa\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa2026_site\\techninxa\\wwwroot\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:wwwroot\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa2026_site\\techninxa\\wwwroot\\js\\main.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:wwwroot\\js\\main.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa2026_site\\techninxa\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa2026_site\\techninxa\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa2026_site\\techninxa\\wwwroot\\sitemap.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
@@ -53,10 +61,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa2026_site\\techninxa\\models\\companychathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:models\\companychathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa2026_site\\techninxa\\wwwroot\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|solutionrelative:wwwroot\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{90134124-83DB-FC35-C0A0-816597E9EC40}|techninxa.csproj|d:\\techninxa2026_site\\techninxa\\views\\home\\editteam.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -162,37 +166,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "sitemap.xml",
-              "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\wwwroot\\sitemap.xml",
-              "RelativeDocumentMoniker": "wwwroot\\sitemap.xml",
-              "ToolTip": "D:\\techninxa2026_site\\techninxa\\wwwroot\\sitemap.xml",
-              "RelativeToolTip": "wwwroot\\sitemap.xml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
-              "WhenOpened": "2026-10-09T04:34:17.125Z",
+              "DocumentIndex": 1,
+              "Title": "main.js",
+              "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\wwwroot\\js\\main.js",
+              "RelativeDocumentMoniker": "wwwroot\\js\\main.js",
+              "ToolTip": "D:\\techninxa2026_site\\techninxa\\wwwroot\\js\\main.js",
+              "RelativeToolTip": "wwwroot\\js\\main.js",
+              "ViewState": "AgIAAIABAAAAAAAAAAAowJQBAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-10-09T15:29:13.022Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "robots.txt",
-              "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\wwwroot\\robots.txt",
-              "RelativeDocumentMoniker": "wwwroot\\robots.txt",
-              "ToolTip": "D:\\techninxa2026_site\\techninxa\\wwwroot\\robots.txt",
-              "RelativeToolTip": "wwwroot\\robots.txt",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2026-10-09T04:31:47.598Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "HomeController.cs",
               "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
@@ -200,38 +191,35 @@
               "RelativeToolTip": "Controllers\\HomeController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAJgGAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-08T18:13:52.352Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-08T18:13:52.352Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
               "ToolTip": "D:\\techninxa2026_site\\techninxa\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAABMAAAAAAAAAAAAUwCEAAABiAAAAAAAAAA==",
+              "ViewState": "AgIAAH0AAAAAAAAAAAAowI0AAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-25T02:53:36.157Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-25T02:53:36.157Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
               "ToolTip": "D:\\techninxa2026_site\\techninxa\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHMEAAAPAAAAAAAAAA==",
+              "ViewState": "AgIAAF0EAAAAAAAAAAAUwG4EAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-25T02:47:55.667Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-25T02:47:55.667Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Projects.cshtml",
               "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Views\\Home\\Projects.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Projects.cshtml",
@@ -239,12 +227,48 @@
               "RelativeToolTip": "Views\\Home\\Projects.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-25T03:08:23.052Z",
+              "WhenOpened": "2026-09-25T03:08:23.052Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "style.css",
+              "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\wwwroot\\css\\style.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\style.css",
+              "ToolTip": "D:\\techninxa2026_site\\techninxa\\wwwroot\\css\\style.css",
+              "RelativeToolTip": "wwwroot\\css\\style.css",
+              "ViewState": "AgIAAGcMAAAAAAAAAAAUwHQMAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-09-25T04:51:00.514Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "robots.txt",
+              "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\wwwroot\\robots.txt",
+              "RelativeDocumentMoniker": "wwwroot\\robots.txt",
+              "ToolTip": "D:\\techninxa2026_site\\techninxa\\wwwroot\\robots.txt",
+              "RelativeToolTip": "wwwroot\\robots.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-10-09T04:31:47.598Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "sitemap.xml",
+              "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\wwwroot\\sitemap.xml",
+              "RelativeDocumentMoniker": "wwwroot\\sitemap.xml",
+              "ToolTip": "D:\\techninxa2026_site\\techninxa\\wwwroot\\sitemap.xml",
+              "RelativeToolTip": "wwwroot\\sitemap.xml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2026-10-09T04:34:17.125Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "ProjectDetails.cshtml",
               "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Views\\Home\\ProjectDetails.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\ProjectDetails.cshtml",
@@ -252,12 +276,11 @@
               "RelativeToolTip": "Views\\Home\\ProjectDetails.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-25T15:07:56.877Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-25T15:07:56.877Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "techninxa.csproj",
               "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\techninxa.csproj",
               "RelativeDocumentMoniker": "techninxa.csproj",
@@ -265,12 +288,11 @@
               "RelativeToolTip": "techninxa.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-10-02T14:13:36.477Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-02T14:13:36.477Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "CompanyChatHub.cs",
               "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Models\\CompanyChatHub.cs",
               "RelativeDocumentMoniker": "Models\\CompanyChatHub.cs",
@@ -282,7 +304,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -294,7 +316,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "CompanyChatController.cs",
               "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Controllers\\CompanyChatController.cs",
               "RelativeDocumentMoniker": "Controllers\\CompanyChatController.cs",
@@ -306,7 +328,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -318,7 +340,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "CompanyChatLogin.cshtml",
               "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Views\\Home\\CompanyChatLogin.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\CompanyChatLogin.cshtml",
@@ -330,19 +352,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "style.css",
-              "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\wwwroot\\css\\style.css",
-              "RelativeDocumentMoniker": "wwwroot\\css\\style.css",
-              "ToolTip": "D:\\techninxa2026_site\\techninxa\\wwwroot\\css\\style.css",
-              "RelativeToolTip": "wwwroot\\css\\style.css",
-              "ViewState": "AgIAAAIEAAAAAAAAAAAEwBYEAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2026-09-25T04:51:00.514Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "EditTeam.cshtml",
               "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Views\\Home\\EditTeam.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\EditTeam.cshtml",
@@ -354,7 +364,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "Team.cshtml",
               "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Views\\Home\\Team.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Team.cshtml",
@@ -366,7 +376,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "CreateTeam.cshtml",
               "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Views\\Home\\CreateTeam.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\CreateTeam.cshtml",
@@ -378,7 +388,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "TeamMember.cs",
               "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Models\\TeamMember.cs",
               "RelativeDocumentMoniker": "Models\\TeamMember.cs",
@@ -390,7 +400,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "Dashboard.cshtml",
               "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Views\\Home\\Dashboard.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Dashboard.cshtml",
@@ -402,7 +412,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "ApplicationDbContext.cs",
@@ -414,7 +424,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "_Layout.cshtml.css",
               "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Views\\Shared\\_Layout.cshtml.css",
               "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml.css",
@@ -426,7 +436,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "CompanyChatLoginViewModel.cs",
               "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Models\\CompanyChatLoginViewModel.cs",
               "RelativeDocumentMoniker": "Models\\CompanyChatLoginViewModel.cs",
@@ -438,7 +448,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "Chatmessage.cs",
               "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Models\\Chatmessage.cs",
               "RelativeDocumentMoniker": "Models\\Chatmessage.cs",
@@ -450,7 +460,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "ClientMesseges.cshtml",
               "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Views\\Home\\ClientMesseges.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\ClientMesseges.cshtml",
@@ -462,7 +472,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "ContactMesseges.cs",
               "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Models\\ContactMesseges.cs",
               "RelativeDocumentMoniker": "Models\\ContactMesseges.cs",
@@ -474,7 +484,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "Project.cs",
               "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Models\\Project.cs",
               "RelativeDocumentMoniker": "Models\\Project.cs",
@@ -486,7 +496,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "Weekday.cs",
               "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Models\\Weekday.cs",
               "RelativeDocumentMoniker": "Models\\Weekday.cs",
@@ -498,7 +508,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "Timeslot.cs",
               "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Models\\Timeslot.cs",
               "RelativeDocumentMoniker": "Models\\Timeslot.cs",
@@ -510,7 +520,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "MakeASchedule.cshtml",
               "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Views\\Home\\MakeASchedule.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\MakeASchedule.cshtml",
@@ -522,7 +532,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 30,
               "Title": "Meeting.cs",
               "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Models\\Meeting.cs",
               "RelativeDocumentMoniker": "Models\\Meeting.cs",
@@ -534,7 +544,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 31,
               "Title": "AddProjects.cshtml",
               "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Views\\Home\\AddProjects.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\AddProjects.cshtml",
@@ -546,7 +556,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 32,
               "Title": "ProjectFeature.cs",
               "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Models\\ProjectFeature.cs",
               "RelativeDocumentMoniker": "Models\\ProjectFeature.cs",
@@ -558,7 +568,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 33,
               "Title": "ProjectMedia.cs",
               "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Models\\ProjectMedia.cs",
               "RelativeDocumentMoniker": "Models\\ProjectMedia.cs",
@@ -570,7 +580,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 34,
               "Title": "ProjectCreateViewModel.cs",
               "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Models\\ProjectCreateViewModel.cs",
               "RelativeDocumentMoniker": "Models\\ProjectCreateViewModel.cs",
@@ -582,7 +592,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 35,
               "Title": "ProjectTechnology.cs",
               "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Models\\ProjectTechnology.cs",
               "RelativeDocumentMoniker": "Models\\ProjectTechnology.cs",
@@ -594,7 +604,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 36,
               "Title": "AdminAccess.cshtml",
               "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Views\\Home\\AdminAccess.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\AdminAccess.cshtml",
@@ -606,7 +616,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 37,
               "Title": "AdminUser.cs",
               "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\Models\\AdminUser.cs",
               "RelativeDocumentMoniker": "Models\\AdminUser.cs",
@@ -618,7 +628,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 38,
               "Title": "ContactDTO.cs",
               "DocumentMoniker": "D:\\techninxa2026_site\\techninxa\\DTO\\ContactDTO.cs",
               "RelativeDocumentMoniker": "DTO\\ContactDTO.cs",

@@ -495,9 +495,7 @@ D:\techninxa2026_site\techninxa\obj\Release\net10.0\scopedcss\bundle\techninxa.s
 D:\techninxa2026_site\techninxa\obj\Release\net10.0\scopedcss\projectbundle\techninxa.bundle.scp.css
 D:\techninxa2026_site\techninxa\obj\Release\net10.0\compressed\m1x074kn7b-{0}-qfru51501e-qfru51501e.gz
 D:\techninxa2026_site\techninxa\obj\Release\net10.0\compressed\vick1hx3wv-{0}-59e9lsd1wi-59e9lsd1wi.gz
-D:\techninxa2026_site\techninxa\obj\Release\net10.0\compressed\0uccriotrv-{0}-f0eag2v39u-f0eag2v39u.gz
 D:\techninxa2026_site\techninxa\obj\Release\net10.0\compressed\vsntuem0zx-{0}-wpwvdqew1l-wpwvdqew1l.gz
-D:\techninxa2026_site\techninxa\obj\Release\net10.0\compressed\tjeguzd7cu-{0}-m4k8ojr8of-m4k8ojr8of.gz
 D:\techninxa2026_site\techninxa\obj\Release\net10.0\compressed\sv92t8h9gv-{0}-bqjiyaj88i-bqjiyaj88i.gz
 D:\techninxa2026_site\techninxa\obj\Release\net10.0\compressed\b2t3iaxsg0-{0}-c2jlpeoesf-c2jlpeoesf.gz
 D:\techninxa2026_site\techninxa\obj\Release\net10.0\compressed\s72341vxca-{0}-erw9l3u2r3-erw9l3u2r3.gz
@@ -573,3 +571,5 @@ D:\techninxa2026_site\techninxa\obj\Release\net10.0\techninxa.genruntimeconfig.c
 D:\techninxa2026_site\techninxa\obj\Release\net10.0\ref\techninxa.dll
 D:\techninxa2026_site\techninxa\obj\Release\net10.0\compressed\k7d4xm0wrf-{0}-75eh6gfkxj-75eh6gfkxj.gz
 D:\techninxa2026_site\techninxa\obj\Release\net10.0\compressed\avpq4gco19-{0}-umpm2exvrq-umpm2exvrq.gz
+D:\techninxa2026_site\techninxa\obj\Release\net10.0\compressed\0uccriotrv-{0}-34by9evla5-34by9evla5.gz
+D:\techninxa2026_site\techninxa\obj\Release\net10.0\compressed\tjeguzd7cu-{0}-bxyo3rpjb3-bxyo3rpjb3.gz

@@ -1,3 +1,63 @@
+
+(function () {
+    function initMobileMenu() {
+        const menuToggle = document.querySelector(".menu-toggle");
+        const mainNav = document.querySelector(".main-nav");
+
+        if (!menuToggle || !mainNav) {
+            console.error("Mobile menu elements not found!", {
+                menuToggle,
+                mainNav
+            });
+            return;
+        }
+
+        function closeMenu() {
+            mainNav.classList.remove("open");
+            menuToggle.setAttribute("aria-expanded", "false");
+            document.body.classList.remove("menu-open");
+        }
+
+        function toggleMenu(event) {
+            event.stopPropagation();
+
+            const isOpen = mainNav.classList.toggle("open");
+
+            menuToggle.setAttribute("aria-expanded", String(isOpen));
+            document.body.classList.toggle("menu-open", isOpen);
+        }
+
+        menuToggle.addEventListener("click", toggleMenu);
+
+        mainNav.querySelectorAll("a").forEach(function (link) {
+            link.addEventListener("click", closeMenu);
+        });
+
+        document.addEventListener("click", function (event) {
+            if (
+                mainNav.classList.contains("open") &&
+                !mainNav.contains(event.target) &&
+                !menuToggle.contains(event.target)
+            ) {
+                closeMenu();
+            }
+        });
+
+        window.addEventListener("resize", function () {
+            if (window.innerWidth > 900) {
+                closeMenu();
+            }
+        });
+
+        console.log("Techninxa mobile menu initialized successfully.");
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initMobileMenu);
+    } else {
+        initMobileMenu();
+    }
+})();
 document.addEventListener("DOMContentLoaded", () => {
   const header = document.getElementById("siteHeader");
   const menuToggle = document.querySelector(".menu-toggle");
@@ -307,3 +367,46 @@ if (cursorDot && cursorRing) {
 }
 
 
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const mainNav = document.querySelector(".main-nav");
+
+    if (!menuToggle || !mainNav) return;
+
+    function closeMenu() {
+        mainNav.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        document.body.classList.remove("menu-open");
+    }
+
+    menuToggle.addEventListener("click", (event) => {
+        event.stopPropagation();
+
+        const isOpen = mainNav.classList.toggle("open");
+
+        menuToggle.setAttribute("aria-expanded", String(isOpen));
+        document.body.classList.toggle("menu-open", isOpen);
+    });
+
+    mainNav.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", closeMenu);
+    });
+
+    document.addEventListener("click", (event) => {
+        if (
+            mainNav.classList.contains("open") &&
+            !mainNav.contains(event.target) &&
+            !menuToggle.contains(event.target)
+        ) {
+            closeMenu();
+        }
+    });
+
+    window.addEventListener("resize", () => {
+        if (window.innerWidth > 800) {
+            closeMenu();
+        }
+    });
+});
